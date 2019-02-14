@@ -1,0 +1,55 @@
+{
+  "item": [
+    {
+      "name": "Chicken",
+      "price": "8.99",
+      "place": "fridge",
+      "weight": "1",
+      "unit": "lb",
+      "type": "Protein"
+    },
+    {
+      "name": "Beef",
+      "price": "15.00",
+      "place": "fridge",
+      "weight": "1.5",
+      "unit": "lb",
+      "type": "Protein"
+    },
+    {
+      "name": "Milk",
+      "price": "3.00",
+      "place": "fridge",
+      "weight": "0.5",
+      "unit": "gal",
+      "type": "Protein"
+    },
+    {
+      "name": "Banana",
+      "price": "1.99",
+      "weight": "2",
+      "unit": "lb",
+      "type": "Fruits"
+    },
+    {
+      "name": "Orange",
+      "price": 5.5
+    },
+    {
+      "name": "Apple",
+      "price": 5.5
+    },
+    {
+      "name": "Bread",
+      "price": 1.6
+    },
+    {
+      "name": "Tomato",
+      "price": 1.25
+    },
+    {
+      "name": "Eggs",
+      "price": 2.6
+    }
+  ]
+}
