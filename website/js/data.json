@@ -50,6 +50,10 @@
     {
       "name": "Eggs",
       "price": 2.6
+    },
+    {
+      "name": "Noodles",
+      "price": 3.5
     }
   ]
 }
