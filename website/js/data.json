@@ -54,6 +54,10 @@
     {
       "name": "Noodles",
       "price": 3.5
+    },
+    {
+      "name": "Water",
+      "price": 1.99
     }
   ]
 }
