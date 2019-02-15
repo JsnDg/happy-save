@@ -1,10 +1,11 @@
-<html lang="en">
+<!DOCTYPE html>
+<html><html lang="en">
 <head>
     <title>happy save</title>
-	<script src="/js/jquery.js"></script>
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/bootstrap.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
+    <script src="./js/jquery.js"></script>
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
 
      <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +19,7 @@
     </div>
     </head>
     -->
-    
+    </head>
     <body>
     <nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
@@ -35,6 +36,9 @@
 			</div>
 
 			<div class="collapse navbar-collapse" id="main-menu">
+               <ul class="nav navbar-nav navbar-left">
+                <li><a href="wallet.html">Back</a></li>
+               </ul>
 			   <ul class="nav navbar-nav navbar-right">
 				<li><a href="index.html">Home</a></li>
 				<li><a href="help.html">Help</a></li>
@@ -45,12 +49,108 @@
 	</nav>
         
         <body>
-            <center>This is the setting page</center>
+            <center><h1>Settings</h1></center>
         </body>
         
-        <script src="/js/bootstrap.min.js"></script>
-        <script src="/js/script.js"></script>
-        <script src="/js/bootstrap.js"></script>
-        <script src="/js/modernizr.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+</style>
+
+<body>
+
+<style>
+test {
+    margin: 0;
+    display: inline-block;
+    
+    }
+    </style>
+    
+    <body>
+<label class="switch" style="float:right; margin-right:8em;margin-top:6em;">
+   <input type="checkbox" checked>
+  <span class="slider round"></span>
+    </label>
+        <center><label class="test"><h2>Notifications</h2></label></center>
+       <label class="test" style="float:left; margin-left:8em;margin-top:em;"><h3>Tips</h3></label>
     </body>
-</html>
+    
+    <body>
+        <center><label class="test" style="float:right;margin-right:20em;"><h2>Units</h2></label></center>
+       <label class="test" style="float:left; margin-left:6em;"><h3>U.S.</h3></label><label class="test" style="float:left;margin-left:8.5em;"><h3>Metric</h3></label>
+        <label class="switch" style="float:center; margin-top:6.3em;">
+   <input type="checkbox" checked>
+  <span class="slider round"></span>
+    </label>
+    </body>
+</body>
+
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/script.js"></script>
+        <script src="./js/bootstrap.js"></script>
+        <script src="./js/modernizr.js"></script>
+
+    </body>
+
+
+
+    </html>
