@@ -5,12 +5,13 @@ $(document).ready(function() {
 function setup(){
 	console.log('Running');
 	$('.newSubmit').click(putNewItem);
+	document.getElementById('expireDate').value = '2019-06-01';
 }
 
 function putNewItem(){
 	var name = document.getElementById('name').value;
 	var price = Number(document.getElementById('price').value);
-	var expireDate = Date(document.getElementById('expireDate').value);
+	var expireDate = document.getElementById('expireDate').value;
 	var weight = Number(document.getElementById('weight').value);
 	var unit = document.getElementById('unit').value;
 	var type = document.getElementById('type').value;
@@ -18,9 +19,9 @@ function putNewItem(){
 	$.get('add/'+name+'/'+price+'/'+expireDate+'/'+weight+'/'+unit+'/'+type, finishedAdd);
 	$(this).text("Gotcha! Add one more");
 	document.getElementById('name').value = ' ';
-	document.getElementById('price').value = ' ';
-	document.getElementById('expireDate').value = ' ';
-	document.getElementById('weight').value = ' ';
+	document.getElementById('price').value = 1;
+	document.getElementById('expireDate').value = '2019-01-01';
+	document.getElementById('weight').value = 1;
 }
 
 function itemDetail(){

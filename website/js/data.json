@@ -114,6 +114,38 @@
     {
       "name": "Seal Food",
       "price": 17.99
+    },
+    {
+      "name": " Orange",
+      "price": 5.6,
+      "expireDate": "Thu Feb 21 2019 13:33:01 GMT-0800 (Pacific Standard Time)",
+      "weight": 1.5,
+      "unit": "lb",
+      "type": "Fruits"
+    },
+    {
+      "name": " Coffe Bean",
+      "price": 18.5,
+      "expireDate": "Thu Feb 21 2019 13:34:13 GMT-0800 (Pacific Standard Time)",
+      "weight": 0.6,
+      "unit": "oz",
+      "type": "Other"
+    },
+    {
+      "name": "Pork",
+      "price": 10.5,
+      "expireDate": "Thu Feb 21 2019 13:37:34 GMT-0800 (Pacific Standard Time)",
+      "weight": 3.2,
+      "unit": "lb",
+      "type": "Protein"
+    },
+    {
+      "name": "Sprite",
+      "price": 1.5,
+      "expireDate": "2019-08-01",
+      "weight": 600,
+      "unit": "ml",
+      "type": "Other"
     }
   ],
   "item_receipt": [
@@ -239,6 +271,22 @@
     {
       "name": "Burger King",
       "price": 6.99
+    },
+    {
+      "name": " Orange",
+      "price": 5.6
+    },
+    {
+      "name": " Coffe Bean",
+      "price": 18.5
+    },
+    {
+      "name": "Pork",
+      "price": 10.5
+    },
+    {
+      "name": "Sprite",
+      "price": 1.5
     }
   ]
 }

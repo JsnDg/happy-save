@@ -1,7 +1,7 @@
+var allItem = require('./website/js/data.json');
+
 var fs = require('fs');
-
-//var item = require('website/js/data.json');
-
+/*
 function readJSONdata(jsonfilename){
     var dataLoad = fs.readFileSync(jsonfilename);
     //change it to json
@@ -10,6 +10,7 @@ function readJSONdata(jsonfilename){
 }
 
 itemHave = readJSONdata('website/js/data.json');
+*/
 
 var express = require('express');
 
@@ -29,7 +30,7 @@ function addNewItem(request, response){
     var data = request.params;
     var name = data.name;
     var price = Number(data.price);
-    var expireDate = Number(data.expireDate);
+    var expireDate = data.expireDate;
     var weight = Number(data.weight);
     var unit = data.unit;
     var type = data.type;
