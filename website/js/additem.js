@@ -53,7 +53,6 @@ function delItem(){
 
 function finishedAdd(data) {
 	console.log("Your new item is recorded");
-	
 }
 
 function finishedDel(data) {

@@ -47,20 +47,60 @@ function addNewItem(request, response){
         "unit": unit,
         "type": type,
     }
-        fs.readFile('website/js/data.json',function(err, data){
-            if(err){
-                return console.error(err);
-            }
-            var allItem = data.toString();
-            allItem = JSON.parse(allItem);
-            allItem.item.push(newItem);
-            var newData = JSON.stringify(allItem, null, 2);
-            fs.writeFile('website/js/data.json', newData, finished);
-            function finished(err){
-                console.log('Done');
-            };
-            reply = {msg: "Your new item is recorded."};
-            response.send(reply)
+    var newItem4Receipt = {
+        "name": name,
+        "price": price,
+    }
+    fs.readFile('website/js/data.json',function(err, data){
+        if(err){
+            return console.error(err);
+        }
+        var allItem = data.toString();
+        allItem = JSON.parse(allItem);
+        allItem.item.push(newItem);
+        allItem.item_receipt.push(newItem4Receipt);
+        var newData = JSON.stringify(allItem, null, 2);
+        fs.writeFile('website/js/data.json', newData, finished);
+        function finished(err){
+            console.log('Done');
+        };
+        reply = {msg: "Your new item is recorded."};
+        response.send(reply)
+    })
+    }
+}
+
+app.get('/add_receipt/:name/:price', addNewItem2Receipt);
+
+function addNewItem2Receipt(request, response){
+    var data = request.params;
+    var name = data.name;
+    var price = Number(data.price);
+    var reply; 
+    if(!name){
+        reply = {msg: "The name is required."};
+        response.send(reply)
+    } else 
+    {
+    var newItem4Receipt = {
+        "name": name,
+        "price": price,
+    }
+    fs.readFile('website/js/data.json',function(err, data){
+        if(err){
+            return console.error(err);
+        }
+        var allItem_receipt = data.toString();
+        console.log('Done');
+        allItem_receipt = JSON.parse(allItem_receipt);
+        allItem_receipt.item_receipt.push(newItem4Receipt);
+        var newData_receipt = JSON.stringify(allItem_receipt, null, 2);
+        fs.writeFile('website/js/data.json', newData_receipt, finished);
+        function finished(err){
+            console.log('Done');
+        };
+        reply = {msg: "Your new item is recorded."};
+        response.send(reply)
     })
     }
 }
@@ -85,28 +125,4 @@ function delItem(request, response){
         reply = {msg: "Your item is used."};
         response.send(reply);
     })
-}
-
-app.get('/all', sendAll);
-
-function sendAll(request, response){
-    response.send(itemHave);
-}
-
-app.get('/search/:item', searchItem);
-
-function searchItem(request, response){
-    var item = request.params.item;
-    var reply;
-    if (itemHave[item]) {
-        reply = {
-           status: "found",
-           name: item,
-           price: itemHave[item]
-       }
-    } else {
-        reply = {
-            status: "not found"
-    }}
-    response.send(reply);
 }

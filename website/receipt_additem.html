@@ -3,7 +3,6 @@
     <title>happy save</title>
 
     <!-- JS -->
-    <script src="/js/require.js"></script>
     <script src="/js/jquery.js"></script>
     <!-- jquery must be put at first -->
 
@@ -11,9 +10,7 @@
     <script src="/js/script.js"></script>
     <script src="/js/bootstrap.js"></script>
     <script src="/js/modernizr.js"></script>
-    
-    <script src="https://twitter.github.io/typeahead.js/js/handlebars.js"></script>
-    <script src="/js/receipt_handlebar.js"></script>
+    <script src="/js/receipt_additem.js"></script>
     
     <!-- CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -25,7 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    
     <body>
     <nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
@@ -35,13 +32,13 @@
 					<span class="bar2"></span>
 					<span class="bar3"></span>
 			  </div>
-				<a class="navbar-brand top" href="#">
-				</a>
+				<a class="navbar-brand top" href="#"></a>
+
 			</div>
 
 			<div class="collapse navbar-collapse" id="main-menu">
                <ul class="nav navbar-nav navbar-left">
-                <li><a href="wallet.html">Back</a></li>
+                <li><a href="receipt.html">Back</a></li>
                </ul>
 			   <ul class="nav navbar-nav navbar-right">
 				<li><a href="home.html">Home</a></li>
@@ -53,16 +50,23 @@
 	</nav>
         
         <body>
-                <center><h1>Receipt</h1></center>
-                
-                <div class="item_rec">
-                    <ul>
-                        {{#this}}
-                        <li>{{name}}: - ${{price}}</li>
-                        {{/this}}
-                    </ul>
-                </div>
-                <center><ul><a href='receipt_additem.html'>Add item to receipt</a></ul></center>
-        </body>
+            <center><h1>Add Item</h1></center>
+            <center>
+            <p class="addTitle">
+                Please add new items to your receipt:
+            </p><p>
+                (Won't be recorded in your food)
+            </p><p>
+                Date: <script> document.write(new Date().toLocaleDateString()); </script>
+            </p><p>
+                Name: <input id="name" placeholder="e.g. Chicken">
+            </p><p>
+                Price: <input id="price" placeholder="e.g. 8.99">
+            </p><p>
+                <button class="newSubmit">submit</button>
+            </p>
+            </center>
+        </body> 
+        <script></script>
     </body>
 </html>

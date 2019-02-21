@@ -110,6 +110,135 @@
       "weight": 1.5,
       "unit": "lb",
       "type": "Grains"
+    },
+    {
+      "name": "Seal Food",
+      "price": 17.99
+    }
+  ],
+  "item_receipt": [
+    {
+      "name": "Beef",
+      "price": 15,
+      "weight": "1.5",
+      "unit": "lb",
+      "type": "Protein"
+    },
+    {
+      "name": "Milk",
+      "price": 3,
+      "weight": "0.5",
+      "unit": "gal",
+      "type": "Protein"
+    },
+    {
+      "name": "Beef",
+      "price": 15,
+      "weight": "1.5",
+      "unit": "lb",
+      "type": "Protein"
+    },
+    {
+      "name": "Rice",
+      "price": 1.5,
+      "expireDate": null,
+      "weight": 2,
+      "unit": "lb",
+      "type": "Grains"
+    },
+    {
+      "name": "Milk",
+      "price": 3,
+      "weight": "0.5",
+      "unit": "gal",
+      "type": "Protein"
+    },
+    {
+      "name": "Beef",
+      "price": 15,
+      "weight": "1.5",
+      "unit": "lb",
+      "type": "Protein"
+    },
+    {
+      "name": "Rice",
+      "price": 1.5,
+      "expireDate": null,
+      "weight": 2,
+      "unit": "lb",
+      "type": "Grains"
+    },
+    {
+      "name": "Milk",
+      "price": 3,
+      "weight": "0.5",
+      "unit": "gal",
+      "type": "Protein"
+    },
+    {
+      "name": "Beef",
+      "price": 15,
+      "weight": "1.5",
+      "unit": "lb",
+      "type": "Protein"
+    },
+    {
+      "name": "Rice",
+      "price": 1.5,
+      "expireDate": null,
+      "weight": 2,
+      "unit": "lb",
+      "type": "Grains"
+    },
+    {
+      "name": "Milk",
+      "price": 3,
+      "weight": "0.5",
+      "unit": "gal",
+      "type": "Protein"
+    },
+    {
+      "name": "Rice",
+      "price": 1.5,
+      "expireDate": null,
+      "weight": 2,
+      "unit": "lb",
+      "type": "Grains"
+    },
+    {
+      "name": "Milk",
+      "price": 3,
+      "weight": "0.5",
+      "unit": "gal",
+      "type": "Protein"
+    },
+    {
+      "name": "Rice",
+      "price": 1.5,
+      "expireDate": null,
+      "weight": 1.5,
+      "unit": "lb",
+      "type": "Grains"
+    },
+    {
+      "name": "Rice",
+      "price": 1.5,
+      "expireDate": null,
+      "weight": 1.5,
+      "unit": "lb",
+      "type": "Grains"
+    },
+    {
+      "name": "Seal Food",
+      "price": 17.99
+    },
+    {
+      "name": "Water",
+      "price": 1.5
+    },
+    {
+      "name": "Burger King",
+      "price": 6.99
     }
   ]
 }
