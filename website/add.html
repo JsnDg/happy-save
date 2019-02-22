@@ -61,14 +61,15 @@
             </p><p>
                 Date: <script> document.write(new Date().toLocaleDateString()); </script>
             </p><p>
-                Name: <input id="name" placeholder="e.g. Chicken">
+                Name: <button style="border-color:#4e9af1;background-color:#FFFFFF;"><input id="name" placeholder="e.g. Chicken"></button>
             </p><p>
-                Price: <input id="price" placeholder="e.g. 8.99">
+                Price: <button style="border-color:#4e9af1;background-color:#FFFFFF;"><input id="price" placeholder="e.g. 8.99" style="width:100px;"></button>
             </p><p>
-                Expire Date: <input id="expireDate" type="date">
+                Expire Date: <button style="border-color:#4e9af1;background-color:#FFFFFF;border-radius:8px;"><input id="expireDate" type="date" style="width:120px;"></button>
             </p><p>
-                Weight: <input id="weight" type="number" placeholder="If applicable">
+                Weight: <button style="border-color:#4e9af1;background-color:#FFFFFF;margin-right:1em;"><input id="weight" type="number" placeholder="If applicable" style="width:100px;"></button>
                 Unit: 
+                <button style="border-color:#4e9af1;background-color:#FFFFFF;border-radius:8px;">
                 <select id="unit">
                     <option value ="lb">lb</option>
                     <option value ="oz">oz</option>
@@ -76,8 +77,10 @@
                     <option value="ml">ml</option>
                     <option value="other">other</option>
                 </select>
+                </button>
             </p><p>
                 Food Type:
+                <button style="border-color:#4e9af1;background-color:#FFFFFF;border-radius:8px;">
                 <select id="type">
                         <option value ="Grains">Grains</option>
                         <option value ="Fruits">Fruits</option>
@@ -87,8 +90,10 @@
                         <option value ="Oils">Oils</option>
                         <option value ="Other">Other</option>
                 </select>
+                </button>
             </p><p>
-                <button class="newSubmit">Submit</button>
+                <center><button class="newSubmit" style="background-color:#4e9af1;border-radius:8px;color:white;">Submit</button></center>
+
             </p>
             </center>
         </body> 

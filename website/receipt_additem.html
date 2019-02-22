@@ -3,19 +3,19 @@
     <title>happy save</title>
 
     <!-- JS -->
-    <script src="/js/jquery.js"></script>
+    <script src="js/jquery.js"></script>
     <!-- jquery must be put at first -->
 
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/script.js"></script>
-    <script src="/js/bootstrap.js"></script>
-    <script src="/js/modernizr.js"></script>
-    <script src="/js/receipt_additem.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/receipt_additem.js"></script>
     
     <!-- CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/bootstrap.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,15 +56,15 @@
             <p class="addTitle">
                 Please add new items to your receipt:
             </p><p>
-                (Won't be recorded in your food)
+                <small>(Won't be recorded in your food)</small>
             </p><p>
                 Date: <script> document.write(new Date().toLocaleDateString()); </script>
             </p><p>
-                Name: <input id="name" placeholder="e.g. Chicken">
+                Name: <button style="border-color:#4e9af1;background-color:#FFFFFF;"><input id="name" placeholder="e.g. Chicken"></button>
             </p><p>
-                Price: <input id="price" placeholder="e.g. 8.99">
+                Price: <button style="border-color:#4e9af1;background-color:#FFFFFF;"><input id="price" placeholder="e.g. 8.99" style="width:100px;"></button>
             </p><p>
-                <button class="newSubmit">Submit</button>
+                <center><button class="newSubmit" style="background-color:#4e9af1;border-radius:8px;color:white;">Submit</button></center>
             </p>
             </center>
         </body> 
