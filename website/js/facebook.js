@@ -12,7 +12,6 @@ function statusChangeCallback(response) {
   // Full docs on the response object can be found in the documentation
   // for FB.getLoginStatus().
   if (response.status === 'connected') {
-    
     // Logged into your app and Facebook.
     $(".facebookLogin").hide();
     window.open("home.html","_self")
