@@ -26,12 +26,20 @@ ga('send', 'pageview');
 </script>
 <!-- End Google Analytics -->
 
+{{> facebook}}
+<script src="js/facebook.js"></script>
     </head>
     
     
         
         <body>
-            <center><img src="img/logo.png" style="width: 75%; margin-bottom: 0.5em;"></center><br><center><img src="img/fbl.png" style="width: 50%; margin-bottom: 0.5em;" onclick='window.open("home.html","_self")'></center></body>
+            <center><img src="img/logo.png" style="width: 75%; margin-bottom: 0.5em;"></center>
+            <p class="facebookLogin">Please login through Facebook
+			<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+			</fb:login-button>
+			</p>
+            
+            <!--<br><center><img src="img/fbl.png" style="width: 50%; margin-bottom: 0.5em;" onclick='window.open("home.html","_self")'></center></body>-->
     
          <script src="js/bootstrap.min.js"></script>
         <script src="js/script.js"></script>
