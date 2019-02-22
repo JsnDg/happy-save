@@ -3,8 +3,10 @@
     <title>happy save</title>
     <script src="js/jquery.js"></script>
     <link href="css/bootstrap.css" rel="stylesheet">
-	  <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    
+    <script src="https://twitter.github.io/typeahead.js/js/handlebars.js"></script>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,24 +28,47 @@ ga('send', 'pageview');
 </script>
 <!-- End Google Analytics -->
 
-{{> facebook}}
 <script src="js/facebook.js"></script>
-    </head>
-    
-    
-        
+
+</head>
         <body>
+            <script>
+                    window.fbAsyncInit = function() {
+                    FB.init({
+                        appId      : '2386567518043847',
+                        cookie     : true,
+                        xfbml      : true,
+                        version    : 'v3.2'
+                    });
+                        
+                    FB.AppEvents.logPageView();   
+                
+                    };
+                
+                    (function(d, s, id){
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) {return;}
+                    js = d.createElement(s); js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));
+            </script>
+
             <center><img src="img/logo.png" style="width: 75%; margin-bottom: 0.5em;"></center>
-            <p class="facebookLogin">Please login through Facebook
-			<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-			</fb:login-button>
+            <center><p class="facebookLogin">
+            <fb:login-button 
+            scope="public_profile,email" onlogin="checkLoginState();">
+            </fb:login-button>
+            <a href="https://www.facebook.com/dialog/oauth/?client_id=2386567518043847&redirect_uri=https://a7-happysave.herokuapp.com/home.html&scope=public_profile,email">LOGIN!</a>
+            </center>
+            
 			</p>
             
-            <!--<br><center><img src="img/fbl.png" style="width: 50%; margin-bottom: 0.5em;" onclick='window.open("home.html","_self")'></center></body>-->
+            <!--<br><center><img src="img/fbl.png" style="width: 50%; margin-bottom: 0.5em;" onclick='window.open("home.html","_self")'></center>-->
     
-         <script src="js/bootstrap.min.js"></script>
-        <script src="js/script.js"></script>
+          <script src="js/bootstrap.min.js"></script>
+          <script src="js/script.js"></script>
 	      <script src="js/bootstrap.js"></script>
-        <script src="js/modernizr.js"></script>
+          <script src="js/modernizr.js"></script>
     </body>
 </html>
