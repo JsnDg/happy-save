@@ -24,12 +24,13 @@ function listening() {
 
 app.use(express.static('website'));
 
-app.get('/add/:name/:price/:expireDate/:weight/:unit/:type', addNewItem);
+app.get('/add/:name/:price/:timeStamp/:expireDate/:weight/:unit/:type', addNewItem);
 
 function addNewItem(request, response){
     var data = request.params;
     var name = data.name;
     var price = Number(data.price);
+    var timeStamp = data.timeStamp;
     var expireDate = data.expireDate;
     var weight = Number(data.weight);
     var unit = data.unit;
@@ -43,6 +44,7 @@ function addNewItem(request, response){
     var newItem = {
         "name": name,
         "price": price,
+        "timeStamp": timeStamp,
         "expireDate": expireDate,
         "weight": weight,
         "unit": unit,
@@ -51,6 +53,7 @@ function addNewItem(request, response){
     var newItem4Receipt = {
         "name": name,
         "price": price,
+        "timeStamp": timeStamp,
     }
     fs.readFile('website/js/data.json',function(err, data){
         if(err){
@@ -71,12 +74,13 @@ function addNewItem(request, response){
     }
 }
 
-app.get('/add_receipt/:name/:price', addNewItem2Receipt);
+app.get('/add_receipt/:name/:price/:timeStamp', addNewItem2Receipt);
 
 function addNewItem2Receipt(request, response){
     var data = request.params;
     var name = data.name;
     var price = Number(data.price);
+    var timeStamp = data.timeStamp;
     var reply; 
     if(!name){
         reply = {msg: "The name is required."};
@@ -86,6 +90,7 @@ function addNewItem2Receipt(request, response){
     var newItem4Receipt = {
         "name": name,
         "price": price,
+        "timeStamp": timeStamp,
     }
     fs.readFile('website/js/data.json',function(err, data){
         if(err){

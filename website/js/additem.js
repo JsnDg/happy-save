@@ -5,28 +5,28 @@ $(document).ready(function() {
 function setup(){
 	console.log('Running');
 	$('.newSubmit').click(putNewItem);
-	document.getElementById('expireDate').value = '2019-06-01';
 }
 
 function putNewItem(){
 	var name = document.getElementById('name').value;
 	var price = Number(document.getElementById('price').value);
+	var today = new Date();
+	var timeStamp = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 	var expireDate = document.getElementById('expireDate').value;
 	var weight = Number(document.getElementById('weight').value);
 	var unit = document.getElementById('unit').value;
 	var type = document.getElementById('type').value;
 	console.log('Adding');
-	$.get('add/'+name+'/'+price+'/'+expireDate+'/'+weight+'/'+unit+'/'+type, finishedAdd);
+	$.get('add/'+name+'/'+price+'/'+timeStamp+'/'+expireDate+'/'+weight+'/'+unit+'/'+type, finishedAdd);
 	$(this).text("Gotcha! Add one more");
 	document.getElementById('name').value = ' ';
-	document.getElementById('price').value = 1;
-	document.getElementById('expireDate').value = '2019-01-01';
-	document.getElementById('weight').value = 1;
+	document.getElementById('price').value = ' ';
+	document.getElementById('expireDate').value = ' ';
+	document.getElementById('weight').value = ' ';
 }
 
 function itemDetail(){
 	var selID = $(this)[0].value;
-	console.log(document.getElementById("recentItem"+selID).className);
 	if (document.getElementById("recentItem"+selID).className == 0){
 		var xhttpitem = new XMLHttpRequest();
 			xhttpitem.onreadystatechange = function() {	
@@ -34,7 +34,7 @@ function itemDetail(){
 					console.log('Loading json to get item info from the server');
 					var response = JSON.parse(xhttpitem.responseText);
 					var item = response.item;
-					document.getElementById("recentItem"+selID).append("Price: $"+item[selID].price
+					document.getElementById("recentItem"+selID).append(item[selID].timeStamp+" Price: $"+item[selID].price
 					+" Size: "+item[selID].weight+" "+item[selID].unit);
 				}
 			};

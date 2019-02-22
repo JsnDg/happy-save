@@ -3,20 +3,8 @@
     {
       "name": "Beef",
       "price": 15,
-      "weight": "1.5",
-      "unit": "lb",
-      "type": "Protein"
-    },
-    {
-      "name": "Milk",
-      "price": 3,
-      "weight": "0.5",
-      "unit": "gal",
-      "type": "Protein"
-    },
-    {
-      "name": "Beef",
-      "price": 15,
+      "timeStamp": "2019-02-01",
+      "expireDate": "2019-06-01",
       "weight": "1.5",
       "unit": "lb",
       "type": "Protein"
@@ -24,7 +12,8 @@
     {
       "name": "Rice",
       "price": 1.5,
-      "expireDate": null,
+      "timeStamp": "2019-02-01",
+      "expireDate": "2019-06-01",
       "weight": 2,
       "unit": "lb",
       "type": "Grains"
@@ -32,119 +21,55 @@
     {
       "name": "Milk",
       "price": 3,
+      "timeStamp": "2019-02-01",
+      "expireDate": "2019-06-01",
       "weight": "0.5",
       "unit": "gal",
       "type": "Protein"
     },
     {
-      "name": "Beef",
-      "price": 15,
-      "weight": "1.5",
-      "unit": "lb",
-      "type": "Protein"
-    },
-    {
-      "name": "Rice",
-      "price": 1.5,
-      "expireDate": null,
-      "weight": 2,
-      "unit": "lb",
-      "type": "Grains"
-    },
-    {
-      "name": "Milk",
-      "price": 3,
-      "weight": "0.5",
-      "unit": "gal",
-      "type": "Protein"
-    },
-    {
-      "name": "Beef",
-      "price": 15,
-      "weight": "1.5",
-      "unit": "lb",
-      "type": "Protein"
-    },
-    {
-      "name": "Rice",
-      "price": 1.5,
-      "expireDate": null,
-      "weight": 2,
-      "unit": "lb",
-      "type": "Grains"
-    },
-    {
-      "name": "Milk",
-      "price": 3,
-      "weight": "0.5",
-      "unit": "gal",
-      "type": "Protein"
-    },
-    {
-      "name": "Rice",
-      "price": 1.5,
-      "expireDate": null,
-      "weight": 2,
-      "unit": "lb",
-      "type": "Grains"
-    },
-    {
-      "name": "Milk",
-      "price": 3,
-      "weight": "0.5",
-      "unit": "gal",
-      "type": "Protein"
-    },
-    {
-      "name": "Rice",
-      "price": 1.5,
-      "expireDate": null,
-      "weight": 1.5,
-      "unit": "lb",
-      "type": "Grains"
-    },
-    {
-      "name": "Rice",
-      "price": 1.5,
-      "expireDate": null,
-      "weight": 1.5,
-      "unit": "lb",
-      "type": "Grains"
-    },
-    {
-      "name": "Seal Food",
-      "price": 17.99
-    },
-    {
-      "name": " Orange",
+      "name": "Orange",
       "price": 5.6,
-      "expireDate": "Thu Feb 21 2019 13:33:01 GMT-0800 (Pacific Standard Time)",
+      "timeStamp": "2019-02-01",
+      "expireDate": "2019-06-01",
       "weight": 1.5,
       "unit": "lb",
       "type": "Fruits"
     },
     {
-      "name": " Coffe Bean",
+      "name": "Coffe Bean",
       "price": 18.5,
-      "expireDate": "Thu Feb 21 2019 13:34:13 GMT-0800 (Pacific Standard Time)",
+      "timeStamp": "2019-02-01",
+      "expireDate": "2019-06-01",
       "weight": 0.6,
       "unit": "oz",
       "type": "Other"
     },
     {
-      "name": "Pork",
-      "price": 10.5,
-      "expireDate": "Thu Feb 21 2019 13:37:34 GMT-0800 (Pacific Standard Time)",
-      "weight": 3.2,
+      "name": "Tomato",
+      "price": 1.5,
+      "timeStamp": "2019-02-05",
+      "expireDate": "2019-06-01",
+      "weight": 1,
       "unit": "lb",
-      "type": "Protein"
+      "type": "Vegetables"
     },
     {
-      "name": "Sprite",
-      "price": 1.5,
-      "expireDate": "2019-08-01",
-      "weight": 600,
-      "unit": "ml",
+      "name": "Water",
+      "price": 1.98,
+      "timeStamp": "2019-2-21",
+      "expireDate": "2019-03-03",
+      "weight": 3,
+      "unit": "gal",
+      "type": "Other"
+    },
+    {
+      "name": "Juice",
+      "price": 3.5,
+      "timeStamp": "2019-2-21",
+      "expireDate": "2019-03-01",
+      "weight": 1.5,
+      "unit": "gal",
       "type": "Other"
     }
   ],
@@ -152,20 +77,8 @@
     {
       "name": "Beef",
       "price": 15,
-      "weight": "1.5",
-      "unit": "lb",
-      "type": "Protein"
-    },
-    {
-      "name": "Milk",
-      "price": 3,
-      "weight": "0.5",
-      "unit": "gal",
-      "type": "Protein"
-    },
-    {
-      "name": "Beef",
-      "price": 15,
+      "timeStamp": "2019-02-01",
+      "expireDate": "2019-06-01",
       "weight": "1.5",
       "unit": "lb",
       "type": "Protein"
@@ -173,7 +86,8 @@
     {
       "name": "Rice",
       "price": 1.5,
-      "expireDate": null,
+      "timeStamp": "2019-02-01",
+      "expireDate": "2019-06-01",
       "weight": 2,
       "unit": "lb",
       "type": "Grains"
@@ -181,112 +95,67 @@
     {
       "name": "Milk",
       "price": 3,
+      "timeStamp": "2019-02-01",
+      "expireDate": "2019-06-01",
       "weight": "0.5",
       "unit": "gal",
       "type": "Protein"
     },
     {
-      "name": "Beef",
-      "price": 15,
-      "weight": "1.5",
-      "unit": "lb",
-      "type": "Protein"
-    },
-    {
-      "name": "Rice",
-      "price": 1.5,
-      "expireDate": null,
-      "weight": 2,
-      "unit": "lb",
-      "type": "Grains"
-    },
-    {
-      "name": "Milk",
-      "price": 3,
-      "weight": "0.5",
-      "unit": "gal",
-      "type": "Protein"
-    },
-    {
-      "name": "Beef",
-      "price": 15,
-      "weight": "1.5",
-      "unit": "lb",
-      "type": "Protein"
-    },
-    {
-      "name": "Rice",
-      "price": 1.5,
-      "expireDate": null,
-      "weight": 2,
-      "unit": "lb",
-      "type": "Grains"
-    },
-    {
-      "name": "Milk",
-      "price": 3,
-      "weight": "0.5",
-      "unit": "gal",
-      "type": "Protein"
-    },
-    {
-      "name": "Rice",
-      "price": 1.5,
-      "expireDate": null,
-      "weight": 2,
-      "unit": "lb",
-      "type": "Grains"
-    },
-    {
-      "name": "Milk",
-      "price": 3,
-      "weight": "0.5",
-      "unit": "gal",
-      "type": "Protein"
-    },
-    {
-      "name": "Rice",
-      "price": 1.5,
-      "expireDate": null,
+      "name": "Orange",
+      "price": 5.6,
+      "timeStamp": "2019-02-01",
+      "expireDate": "2019-06-01",
       "weight": 1.5,
       "unit": "lb",
-      "type": "Grains"
+      "type": "Fruits"
     },
     {
-      "name": "Rice",
-      "price": 1.5,
-      "expireDate": null,
-      "weight": 1.5,
-      "unit": "lb",
-      "type": "Grains"
-    },
-    {
-      "name": "Seal Food",
-      "price": 17.99
-    },
-    {
-      "name": "Water",
-      "price": 1.5
-    },
-    {
-      "name": "Burger King",
-      "price": 6.99
-    },
-    {
-      "name": " Orange",
-      "price": 5.6
-    },
-    {
-      "name": " Coffe Bean",
-      "price": 18.5
+      "name": "Coffe Bean",
+      "price": 18.5,
+      "timeStamp": "2019-02-01",
+      "expireDate": "2019-06-01",
+      "weight": 0.6,
+      "unit": "oz",
+      "type": "Other"
     },
     {
       "name": "Pork",
-      "price": 10.5
+      "price": 10.5,
+      "timeStamp": "2019-02-01",
+      "expireDate": "2019-06-01",
+      "weight": 3.2,
+      "unit": "lb",
+      "type": "Protein"
     },
     {
-      "name": "Sprite",
-      "price": 1.5
+      "name": "Tomato",
+      "price": 1.5,
+      "timeStamp": "2019-02-05",
+      "expireDate": "2019-06-01",
+      "weight": 1,
+      "unit": "lb",
+      "type": "Vegetables"
+    },
+    {
+      "name": "Burger King",
+      "price": 6.98,
+      "timeStamp": "2019-2-21"
+    },
+    {
+      "name": "Water",
+      "price": 1.98,
+      "timeStamp": "2019-2-21"
+    },
+    {
+      "name": "Juice",
+      "price": 3.5,
+      "timeStamp": "2019-2-21"
+    },
+    {
+      "name": "Pandas Express",
+      "price": 8.15,
+      "timeStamp": "2019-2-21"
     }
   ]
 }
