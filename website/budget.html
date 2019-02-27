@@ -31,11 +31,11 @@
 				<a class="navbar-brand top" href="#">
 					<!--<img src="img/logo.png" alt="">-->
 				</a>
-                <ul class="back-button">
-        <ul class="nav navbar-nav navbar-left">
-                <a href="wallet.html">Back</a>
-               </ul>
-                </ul>
+        <ul class="back-button">
+          <ul class="nav navbar-nav navbar-left">
+                  <a href="wallet.html"><img src="img/back.png" style="width:6%"></a>
+                 </ul>
+                  </ul>
 			</div>
 
 			<div class="collapse navbar-collapse" id="main-menu">
@@ -50,7 +50,15 @@
         
         <body>
             <center><h1>Budget</h1></center>
+            <!--
             <center><img src="img/graph.png" style="width: 75%; margin-bottom: 0.5em;margin-top:1em;"></center>
+            -->
+            <center><h4>Please set the your budget: </h4></center>
+            <center>Amount: $ <button style="border-color:#7EDAD4;background-color:#FFFFFF;"><input id="budget" placeholder="e.g. 150.00" style="width:100px;"></button></center>
+            <center><h4>Please set the period: </h4></center>
+            <center>From: <button style="border-color:#7EDAD4;background-color:#FFFFFF;border-radius:8px;"><input id="fromDate" type="date" style="width:120px;"></button></center>;
+            <center>To: <button style="border-color:#7EDAD4;background-color:#FFFFFF;border-radius:8px;"><input id="toDate" type="date" style="width:120px;"></button></center>;
+            <center><button id="setBudgetRange" style="background-color:#7EDAD4;border-radius:8px;color:white;">Confirm Budget</button></center>;
         </body>
         
         <script src="js/bootstrap.min.js"></script>

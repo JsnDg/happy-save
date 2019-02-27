@@ -10,7 +10,8 @@ function setup(){
 
 function putNewItem(){
 	var name = document.getElementById('name').value;
-	var price = Number(document.getElementById('price').value);
+	var rawPrice = document.getElementById('price').value;
+	var price = Number(rawPrice);
 	var today = new Date();
 	var timeStamp = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 	var expireDate = document.getElementById('expireDate').value;
@@ -18,6 +19,19 @@ function putNewItem(){
 	var unit = document.getElementById('unit').value;
 	var type = document.getElementById('type').value;
 	console.log('Adding');
+	if (isNaN(rawPrice)){
+        window.alert("Please input a number as price.");
+    } else {
+        if (today.getFullYear()>Number(expireDate.slice(0, 4)) 
+        || (today.getFullYear()==Number(expireDate.slice(0, 4)) && (today.getMonth()+1)>Number(expireDate.slice(5, 7)))
+        || (today.getFullYear()==Number(expireDate.slice(0, 4)) && (today.getMonth()+1)==Number(expireDate.slice(5, 7)) && today.getDate()>Number(expireDate.slice(8, 10))))
+        {
+			window.alert("Please input a expire date not before today.");
+        } else {
+            $.get('addwaste/'+name+'/'+price+'/'+timeStamp+'/'+expireDate+'/'+weight+'/'+unit+'/'+type, finishedAdd);
+            $(this).text("Gotcha! Add one more"); 
+        }
+    }
 	$.get('add/'+name+'/'+price+'/'+timeStamp+'/'+expireDate+'/'+weight+'/'+unit+'/'+type, finishedAdd);
 	$(this).text("Gotcha! Add one more");
 	document.getElementById('name').value = ' ';

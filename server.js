@@ -208,3 +208,49 @@ function changeWastePercent(request, response){
         response.send(reply);
     })
 }
+
+app.get('/addwaste/:name/:price/:timeStamp/:expireDate/:weight/:unit/:type/:wastePer', addWasteItem);
+
+function addWasteItem(request, response){
+    var data = request.params;
+    var name = data.name;
+    var price = Number(data.price);
+    var timeStamp = data.timeStamp;
+    var expireDate = data.expireDate;
+    var weight = Number(data.weight);
+    var unit = data.unit;
+    var type = data.type;
+    var wastePer = data.wastePer;
+    var reply; 
+    if(!name){
+        reply = {msg: "The name is required."};
+        response.send(reply)
+    } else 
+    {
+    var newItem = {
+        "name": name,
+        "price": price,
+        "timeStamp": timeStamp,
+        "expireDate": expireDate,
+        "weight": weight,
+        "unit": unit,
+        "type": type,
+        "wastePer": wastePer,
+    }
+    fs.readFile('website/js/data.json',function(err, data){
+        if(err){
+            return console.error(err);
+        }
+        var allItem = data.toString();
+        allItem = JSON.parse(allItem);
+        allItem.waste.push(newItem);
+        var newData = JSON.stringify(allItem, null, 2);
+        fs.writeFile('website/js/data.json', newData, finished);
+        function finished(err){
+            console.log('Done');
+        };
+        reply = {msg: "Your new item is recorded."};
+        response.send(reply)
+    })
+    }
+}

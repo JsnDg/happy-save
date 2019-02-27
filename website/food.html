@@ -54,8 +54,7 @@
             <center><h1> Food Storage</h1></center>
             <ul id="item"></ul>
 
-            <center><button class="newSubmit" style="background-color:#7EDAD4;border-radius:8px;"><a href="add.html" style="color:white;">Add item</a></button></center>
-           
+            <center><button class="newSubmit" style="background-color:#7EDAD4;border-radius:8px;"><a href="add.html" style="color:white;">Add item</a></button></center>  
         </body> 
         <script>
             var xhttp = new XMLHttpRequest();
@@ -66,8 +65,8 @@
                   var item = response.item;
                   var output = '';
                   for(var i=0;i<item.length;i++){
-                    output += '<p><button value="'+i+'" class="detail">'+item[i].name
-                      +'</button>'+" "+'<button value="'+i
+                    output += '<p><button style="border-color:#7EDAD4;background-color:#FFFFFF;border-radius:8px" value="'+i+'" class="detail">'+item[i].name
+                      +'</button>'+" "+'<button style="border-color:#7EDAD4;background-color:#FFFFFF;border-radius:8px" value="'+i
                       +'" class="del">Use</button></p><p class="0" id="recentItem'+i+'"></p>';
                   }
                   document.getElementById('item').innerHTML = output;

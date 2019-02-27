@@ -18,7 +18,7 @@ function finishedDel(data) {
 function changeWastePortion() {
   var selID = $(this)[0].value;
 	if (document.getElementById("recentItem"+selID).className == 0){
-    $("#recentItem"+selID).append("Set waste percentage:<select id='waste_percent"+selID+"'><option>10</option><option>25</option><option>50</option><option>75</option><option>90</option><option>100</option></select>%<button class='confirmChange' value='"+selID+"'>Confirm</button>");
+    $("#recentItem"+selID).append("Set waste percentage:<select style='border-color:#7EDAD4;background-color:#FFFFFF;border-radius:8px;' id='waste_percent"+selID+"'><option>10</option><option>25</option><option>50</option><option>75</option><option>90</option><option>100</option></select>%<button class='confirmChange' value='"+selID+"'>Confirm</button>");
     console.log('Append options of change the portion');
     document.getElementById("recentItem"+selID).className = 1;
     $(".confirmChange").click(changePortion);
@@ -78,13 +78,13 @@ function showDetail() {
                         break;
             }        
           }
-          output = '<center>Waste of Grains: $'+sumGrains+'</center>';
-          output += '<center>Waste of Fruits: $'+sumFruits+'</center>';
-          output += '<center>Waste of Vegetables: $'+sumVegetables+'</center>';
-          output += '<center>Waste of Dairy: $'+sumDairy+'</center>';
-          output += '<center>Waste of Protein: $'+sumProtein+'</center>';
-          output += '<center>Waste of Oils: $'+sumOils+'</center>';
-          output += '<center>Waste of Other: $'+sumOther+'</center>';
+          output = '<p></p><center>Waste of Grains: $'+sumGrains.toFixed(2)+'</center>';
+          output += '<center>Waste of Fruits: $'+sumFruits.toFixed(2)+'</center>';
+          output += '<center>Waste of Vegetables: $'+sumVegetables.toFixed(2)+'</center>';
+          output += '<center>Waste of Dairy: $'+sumDairy.toFixed(2)+'</center>';
+          output += '<center>Waste of Protein: $'+sumProtein.toFixed(2)+'</center>';
+          output += '<center>Waste of Oils: $'+sumOils.toFixed(2)+'</center>';
+          output += '<center>Waste of Other: $'+sumOther.toFixed(2)+'</center><p></p>';
           document.getElementById('details').innerHTML = output;
           console.log('Have shown detail');
         }
@@ -95,4 +95,8 @@ function showDetail() {
   } else {
 		$('#details').fadeToggle();
 	}
+}
+
+function dateFilter() {
+  
 }

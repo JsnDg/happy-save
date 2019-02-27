@@ -47,6 +47,7 @@
         
         <body>
             <center><h1>Waste</h1></center>
+            
                 <!--
                 <div class="waste_item">
                     <ul>
@@ -78,14 +79,14 @@
                         moneyWaste = item[i].price*item[i].wastePer/100;
                         wasteSum += moneyWaste;
                     }
-                    output += '<center><h4>Total money you wasted: $'+wasteSum+'</h4></center>';
-                    output += '<center><button id="Detail">Details</button></center>';
+                    output += '<p></p><center><h4>Total money you wasted: $'+wasteSum.toFixed(2)+'</h4></center><p></p>';
+                    output += '<p></p><center><button style="border-color:#7EDAD4;background-color:#FFFFFF;border-radius:8px" id="Detail">Details</button></center><p></p>';
                     output += '<center><ul id="details" class=0></ul></center>';
                     for(var i=0;i<item.length;i++){
                         moneyWaste = item[i].price*item[i].wastePer/100;
-                        output += '<li><button value="'+i+'" class="detail">'+item[i].name
-                        +'</button>Waste:'+" "+item[i].wastePer+'% Money waste: $'+moneyWaste+'</li><p><button value="'+i
-                        +'" class="del_waste">Delete</button><button value="'+i
+                        output += '<li>'+item[i].name
+                        +' - Waste:'+" "+item[i].wastePer+'% - Money waste: $'+moneyWaste+'</li><p><button style="border-color:#7EDAD4;background-color:#FFFFFF;border-radius:8px" value="'+i
+                        +'" class="del_waste">Delete</button>'+" "+'<button style="border-color:#7EDAD4;background-color:#FFFFFF;border-radius:8px" value="'+i
                         +'" class="waste_portion">Change portion</button></p><p class="0" id="recentItem'+i+'"></p>';
                     }
                     
@@ -93,13 +94,13 @@
                     $('.waste_portion').click(changeWastePortion);
                     $('.del_waste').click(deleteWasteItem);
                     $('#Detail').click(showDetail);
+                    $('#submitFilter').click(dateFilter);
                     }
                 };
                 xhttpwaste.open("GET", "/js/data.json", true);
                 xhttpwaste.send();
             </script>
-                <center><ul><a href='waste_additem.html'>Add item to waste</a></ul></center>
-
+                <center><button style="background-color:#7EDAD4;border-radius:8px;color:white;" onclick="window.open('waste_add.html', '_self')">Add item to waste</button></center>
         </body>
         
         <script src="js/bootstrap.min.js"></script>

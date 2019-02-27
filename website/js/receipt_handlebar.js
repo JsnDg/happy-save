@@ -9,7 +9,14 @@ $(document).ready(function() {
                       var template = Handlebars.compile(source);
                       console.log('Loading json from the server');
                       var response = JSON.parse(xhttp.responseText);
-                      var context = response.item_receipt;
+                      var fromDate = response.budget[0].fromDate;
+                      var toDate = response.budget[0].toDate;
+                      console.log(fromDate);
+                      console.log(toDate);
+                      var contextTrue = response.item_receipt;
+                      var context = $.grep(response.item_receipt, function (n, i){
+                        return (Number(n.timeStamp.slice(0, 4)+n.timeStamp.slice(5, 7)+n.timeStamp.slice(8, 10))>=Number(fromDate.slice(0, 4)+fromDate.slice(5, 7)+fromDate.slice(8, 10)))
+                                    && (Number(n.timeStamp.slice(0, 4)+n.timeStamp.slice(5, 7)+n.timeStamp.slice(8, 10))<=Number(toDate.slice(0, 4)+toDate.slice(5, 7)+toDate.slice(8, 10)))});
                       console.log(context);
                       var html = template(context);
                       $(".item_rec").html(html);
