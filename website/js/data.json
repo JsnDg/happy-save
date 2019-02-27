@@ -62,15 +62,6 @@
       "weight": 3,
       "unit": "gal",
       "type": "Other"
-    },
-    {
-      "name": "Juice",
-      "price": 3.5,
-      "timeStamp": "2019-2-21",
-      "expireDate": "2019-03-01",
-      "weight": 1.5,
-      "unit": "gal",
-      "type": "Other"
     }
   ],
   "item_receipt": [
@@ -156,6 +147,43 @@
       "name": "Pandas Express",
       "price": 8.15,
       "timeStamp": "2019-2-21"
+    },
+    {
+      "name": "Expire Food",
+      "price": 1.55,
+      "timeStamp": "2019-2-25"
+    }
+  ],
+  "waste": [
+    {
+      "name": "Expire Food",
+      "price": 1.55,
+      "timeStamp": "2019-2-25",
+      "expireDate": "2018-12-23",
+      "weight": 4,
+      "unit": "lb",
+      "type": "Fruits",
+      "wastePer": "100"
+    },
+    {
+      "name": "Expire Soup",
+      "price": 1.55,
+      "timeStamp": "2019-2-25",
+      "expireDate": "2018-12-23",
+      "weight": 4,
+      "unit": "lb",
+      "type": "Fruits",
+      "wastePer": "100"
+    },
+    {
+      "name": "Juice",
+      "price": 3.5,
+      "timeStamp": "2019-2-21",
+      "expireDate": "2019-02-01",
+      "weight": 1.5,
+      "unit": "gal",
+      "type": "Other",
+      "wastePer": "100"
     }
   ]
 }

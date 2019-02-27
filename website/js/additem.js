@@ -4,6 +4,7 @@ $(document).ready(function() {
 
 function setup(){
 	console.log('Running');
+	checkExpire();
 	$('.newSubmit').click(putNewItem);
 }
 
@@ -34,8 +35,8 @@ function itemDetail(){
 					console.log('Loading json to get item info from the server');
 					var response = JSON.parse(xhttpitem.responseText);
 					var item = response.item;
-					document.getElementById("recentItem"+selID).append(item[selID].timeStamp+" Price: $"+item[selID].price
-					+" Size: "+item[selID].weight+" "+item[selID].unit);
+					document.getElementById("recentItem"+selID).append("Price: $"+item[selID].price
+					+" Size: "+item[selID].weight+" "+item[selID].unit+" Expire date: "+item[selID].expireDate);
 				}
 			};
 		xhttpitem.open("GET", "/js/data.json", true);
@@ -59,4 +60,12 @@ function finishedAdd(data) {
 function finishedDel(data) {
 	console.log("Your new item is deleted");
 	setTimeout(function(){ window.location.reload(true); }, 1000);
+}
+
+function checkExpire() {
+	$.get('checkExpire', finishedCheck);
+}
+
+function finishedCheck(data) {
+	console.log("Check the expire date food list");
 }

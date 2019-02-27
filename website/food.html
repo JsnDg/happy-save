@@ -7,7 +7,6 @@
     <script src="js/jquery.js"></script>
     <!-- jquery must be put at first -->
 
-
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/bootstrap.js"></script>
@@ -42,7 +41,6 @@
                </ul>
                 </ul>
 			</div>
-
 			<div class="collapse navbar-collapse" id="main-menu">
 			   <ul class="nav navbar-nav navbar-right">
 				<li><a href="home.html">Home</a></li>
@@ -56,7 +54,6 @@
             <center><h1> Food Storage</h1></center>
             <ul id="item"></ul>
             <center><button class="newSubmit" style="background-color:#4e9af1;border-radius:8px;"><a href="add.html" style="color:white;">Add item</a></button></center>
-           
         </body> 
         <script>
             var xhttp = new XMLHttpRequest();
@@ -67,9 +64,9 @@
                   var item = response.item;
                   var output = '';
                   for(var i=0;i<item.length;i++){
-                      output += '<p><button value="'+i+'" class="detail">'+item[i].name
-                        +'</button>'+" "+'<button value="'+i
-                        +'" class="del">Use</button></p><p class="0" id="recentItem'+i+'"></p>';
+                    output += '<p><button value="'+i+'" class="detail">'+item[i].name
+                      +'</button>'+" "+'<button value="'+i
+                      +'" class="del">Use</button></p><p class="0" id="recentItem'+i+'"></p>';
                   }
                   document.getElementById('item').innerHTML = output;
                   $('.detail').click(itemDetail);
