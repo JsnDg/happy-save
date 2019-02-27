@@ -254,3 +254,40 @@ function addWasteItem(request, response){
     })
     }
 }
+
+app.get('/changeBudget/:fromDate/:toDate/:budgetAmount', changeBudget);
+
+function changeBudget(request, response){
+    console.log('OK');
+    var data = request.params;
+    var fromDate = data.fromDate;
+    var toDate = data.toDate;
+    var budgetAmount = Number(data.budgetAmount);
+    var reply;
+    if(!budgetAmount){
+        reply = {msg: "The budget is required."};
+        response.send(reply)
+    } else 
+    {
+    var revisedBudget = {
+        "fromDate": fromDate,
+        "toDate": toDate,
+        "budgetAmount": budgetAmount,
+    }
+    fs.readFile('website/js/data.json',function(err, data){
+        if(err){
+            return console.error(err);
+        }
+        var allItem = data.toString();
+        allItem = JSON.parse(allItem);
+        allItem.budget[0] = revisedBudget;
+        var newData = JSON.stringify(allItem, null, 2);
+        fs.writeFile('website/js/data.json', newData, finished);
+        function finished(err){
+            console.log('Done');
+        };
+        reply = {msg: "Your new budget is recorded."};
+        response.send(reply)
+    })
+    }
+}

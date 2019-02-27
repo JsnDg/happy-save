@@ -2,8 +2,8 @@
   "budget": [
     {
       "fromDate": "2019-02-01",
-      "toDate": "2019-02-20",
-      "budget": 190
+      "toDate": "2019-02-28",
+      "budgetAmount": 100
     }
   ],
   "item": [
