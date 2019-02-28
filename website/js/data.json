@@ -1,14 +1,12 @@
 {
-  "item": [
+  "budget": [
     {
-      "name": "Beef",
-      "price": 15,
-      "timeStamp": "2019-02-01",
-      "expireDate": "2019-06-01",
-      "weight": "1.5",
-      "unit": "lb",
-      "type": "Protein"
-    },
+      "fromDate": "2019-02-01",
+      "toDate": "2019-02-28",
+      "budgetAmount": 300
+    }
+  ],
+  "item": [
     {
       "name": "Rice",
       "price": 1.5,
@@ -57,19 +55,19 @@
     {
       "name": "Water",
       "price": 1.98,
-      "timeStamp": "2019-2-21",
+      "timeStamp": "2019-02-21",
       "expireDate": "2019-03-03",
       "weight": 3,
       "unit": "gal",
       "type": "Other"
     },
     {
-      "name": "Juice",
-      "price": 3.5,
-      "timeStamp": "2019-2-21",
-      "expireDate": "2019-03-01",
-      "weight": 1.5,
-      "unit": "gal",
+      "name": "Cola",
+      "price": 4.5,
+      "timeStamp": "2019-02-27",
+      "expireDate": "2019-03-15",
+      "weight": 400,
+      "unit": "ml",
       "type": "Other"
     }
   ],
@@ -140,22 +138,112 @@
     {
       "name": "Burger King",
       "price": 6.98,
-      "timeStamp": "2019-2-21"
+      "timeStamp": "2019-02-21"
     },
     {
       "name": "Water",
       "price": 1.98,
-      "timeStamp": "2019-2-21"
+      "timeStamp": "2019-02-21"
     },
     {
       "name": "Juice",
       "price": 3.5,
-      "timeStamp": "2019-2-21"
+      "timeStamp": "2019-02-21"
     },
     {
       "name": "Pandas Express",
       "price": 8.15,
-      "timeStamp": "2019-2-21"
+      "timeStamp": "2019-02-21"
+    },
+    {
+      "name": "Expire Food",
+      "price": 1.55,
+      "timeStamp": "2019-02-25"
+    },
+    {
+      "name": "Sprite",
+      "price": 1.5,
+      "timeStamp": "2019-02-27"
+    },
+    {
+      "name": "Water",
+      "price": 2,
+      "timeStamp": "2019-02-27"
+    },
+    {
+      "name": "Cola",
+      "price": 4.5,
+      "timeStamp": "2019-02-27"
+    }
+  ],
+  "waste": [
+    {
+      "name": "Expire Soup",
+      "price": 1.55,
+      "timeStamp": "2019-02-25",
+      "expireDate": "2019-02-26",
+      "weight": 4,
+      "unit": "lb",
+      "type": "Fruits",
+      "wastePer": "100"
+    },
+    {
+      "name": "Juice",
+      "price": 3.5,
+      "timeStamp": "2019-02-21",
+      "expireDate": "2019-02-01",
+      "weight": 1.5,
+      "unit": "gal",
+      "type": "Other",
+      "wastePer": "100"
+    },
+    {
+      "name": "Apple",
+      "price": 5.5,
+      "timeStamp": "2019-02-27",
+      "expireDate": "2019-02-19",
+      "weight": 5,
+      "unit": "lb",
+      "type": "Fruits",
+      "wastePer": "10"
+    },
+    {
+      "name": "Orange",
+      "price": 1.5,
+      "timeStamp": "2019-02-27",
+      "expireDate": "2019-02-23",
+      "weight": 3,
+      "unit": "lb",
+      "type": "Fruits",
+      "wastePer": "10"
+    },
+    {
+      "name": "Banana",
+      "price": 5,
+      "timeStamp": "2019-02-27",
+      "expireDate": "2019-02-20",
+      "weight": 5,
+      "unit": "lb",
+      "type": "Fruits",
+      "wastePer": "10"
+    },
+    {
+      "name": "Pineapple",
+      "price": 3.5,
+      "timeStamp": "2019-02-27",
+      "expireDate": "2019-02-21",
+      "weight": 3,
+      "unit": "lb",
+      "type": "Fruits",
+      "wastePer": "90"
+    }
+  ],
+  "shop_list": [
+    {
+      "name": "Milk"
+    },
+    {
+      "name": "Water"
     }
   ]
 }

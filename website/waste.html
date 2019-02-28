@@ -2,6 +2,10 @@
 <head>
     <title>happy save</title>
     <script src="js/jquery.js"></script>
+    <script src="js/waste.js"></script>
+    <!--
+    <script src="https://twitter.github.io/typeahead.js/js/handlebars.js"></script>
+    -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -11,13 +15,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <!--
-    <div class="logo">
-    <h1><center>happy save</center></h1>
-    </div>
-    </head>
-    -->
     
     <body>
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -49,19 +46,53 @@
 	</nav>
         
         <body>
-            <center><h1> Waste </h1></center>
-            <center><p> As of: 2/7/2019 - 2/13/2019 </p></center>
-            <ol>
-                <li> Milk x3 $7.00</li>
-                <li> Eggs x2 $5.00</li>
-                <li> Butter x1 $2.00 </li>
-                <li> Cream Cheese x2 $10.00</li>
-                <li> Shrimp x2 $11.00 </li>
-            </ol>
-            <center><h2><u>Total Amount</u></h2></center>
-            <center><h3>$35.00 </h3></center>
-
+            <center><h1>Waste</h1></center>
             
+                <!--
+                <div class="waste_item">
+                    <ul>
+                        {{#this}}
+                        <li>{{name}} Weight: {{weight}} {{unit}}</li>
+                        <p>Money waste: ${{price}} - Type: {{type}}</p>
+                        {{/this}}
+                    </ul>
+                </div>
+                -->
+                <ul id="waste"></ul>
+            <script>
+                var xhttpwaste = new XMLHttpRequest();
+                xhttpwaste.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                    console.log('Loading json from the server');
+                    var response = JSON.parse(xhttpwaste.responseText);
+                    var item = response.waste;
+                    var output = '';
+                    var wasteSum = 0;
+                    for(var i=0;i<item.length;i++){
+                        moneyWaste = item[i].price*item[i].wastePer/100;
+                        wasteSum += moneyWaste;
+                    }
+                    output += '<p></p><center><h4>Total money you wasted: $'+wasteSum.toFixed(2)+'</h4></center><p></p>';
+                    output += '<p></p><center><button style="border-color:#7EDAD4;background-color:#FFFFFF;border-radius:8px" id="Detail">Details</button></center><p></p>';
+                    output += '<center><ul id="details" class=0></ul></center>';
+                    for(var i=0;i<item.length;i++){
+                        moneyWaste = item[i].price*item[i].wastePer/100;
+                        output += '<li>'+item[i].name
+                        +' - Waste:'+" "+item[i].wastePer+'% - Money waste: $'+moneyWaste+'</li><p>Expired date: '+item[i].expireDate+'</p><button style="border-color:#7EDAD4;background-color:#FFFFFF;border-radius:8px" value="'+i
+                        +'" class="del_waste">Delete</button>'+" "+'<button style="border-color:#7EDAD4;background-color:#FFFFFF;border-radius:8px" value="'+i
+                        +'" class="waste_portion">Change portion</button><p class="0" id="recentItem'+i+'"></p>';
+                    }
+                    
+                    document.getElementById('waste').innerHTML = output;
+                    $('.waste_portion').click(changeWastePortion);
+                    $('.del_waste').click(deleteWasteItem);
+                    $('#Detail').click(showDetail);
+                    }
+                };
+                xhttpwaste.open("GET", "/js/data.json", true);
+                xhttpwaste.send();
+            </script>
+                <center><button style="background-color:#7EDAD4;border-radius:8px;color:white;" onclick="window.open('waste_add.html', '_self')">Add item to waste</button></center>
         </body>
         
         <script src="js/bootstrap.min.js"></script>

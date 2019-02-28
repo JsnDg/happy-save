@@ -10,7 +10,7 @@
     <script src="js/script.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/modernizr.js"></script>
-    <script src="js/additem.js"></script>
+    <script src="js/addwaste.js"></script>
     
     <!-- CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -37,7 +37,7 @@
 				</a>
 <ul class="back-button">
         <ul class="nav navbar-nav navbar-left">
-                <a href="food.html"><img src="img/back.png" style="width:6%"></a>
+                <a href="waste.html"><img src="img/back.png" style="width:6%"></a>
                </ul>
                 </ul>
 			</div>
@@ -54,18 +54,18 @@
 	</nav>
         
         <body>
-            <center><h1>Add Item</h1></center>
+            <center><h1>Add Waste</h1></center>
             <center>
             <p class="addTitle">
-                Please add new items:
+                Please add new waste:
             </p><p>
                 Date: <script> document.write(new Date().toLocaleDateString()); </script>
             </p><p>
                 Name: <button style="border-color:#7EDAD4;background-color:#FFFFFF;"><input id="name" placeholder="e.g. Chicken"></button>
             </p><p>
-                Price: $ <button style="border-color:#7EDAD4;background-color:#FFFFFF;"><input id="price" placeholder="e.g. 8.99" style="width:100px;"></button>
+                Price: <button style="border-color:#7EDAD4;background-color:#FFFFFF;"><input id="price" placeholder="e.g. 8.99" style="width:100px;"></button>
             </p><p>
-                Expire Date: <button style="border-color:#7EDAD4;background-color:#FFFFFF;border-radius:8px;"><input id="expireDate" type="date" style="width:120px;"></button>
+                Expired Date: <button style="border-color:#7EDAD4;background-color:#FFFFFF;border-radius:8px;"><input id="expireDate" type="date" style="width:120px;"></button>
             </p><p>
                 Weight: <button style="border-color:#7EDAD4;background-color:#FFFFFF;margin-right:1em;"><input id="weight" type="number" placeholder="If applicable" style="width:100px;"></button>
                 Unit: 
@@ -92,7 +92,18 @@
                 </select>
                 </button>
             </p><p>
-
+                Waste Portion:
+                <button style="border-color:#7EDAD4;background-color:#FFFFFF;border-radius:8px;">
+                <select id="wastePer">
+                        <option>10</option>
+                        <option>25</option>
+                        <option>50</option>
+                        <option>75</option>
+                        <option>90</option>
+                        <option>100</option>
+                </select>
+                </button>%
+            </p><p>
                 <center><button class="newSubmit" style="background-color:#7EDAD4;border-radius:8px;color:white;">Submit</button></center>
             </p>
             </center>
