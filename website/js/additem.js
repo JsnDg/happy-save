@@ -28,12 +28,10 @@ function putNewItem(){
         {
 			window.alert("Please input a expire date not before today.");
         } else {
-            $.get('addwaste/'+name+'/'+price+'/'+timeStamp+'/'+expireDate+'/'+weight+'/'+unit+'/'+type, finishedAdd);
-            $(this).text("Gotcha! Add one more"); 
+            $.get('add/'+name+'/'+price+'/'+timeStamp+'/'+expireDate+'/'+weight+'/'+unit+'/'+type, finishedAdd);
+	        $(this).text("Gotcha! Add one more"); 
         }
     }
-	$.get('add/'+name+'/'+price+'/'+timeStamp+'/'+expireDate+'/'+weight+'/'+unit+'/'+type, finishedAdd);
-	$(this).text("Gotcha! Add one more");
 	document.getElementById('name').value = ' ';
 	document.getElementById('price').value = ' ';
 	document.getElementById('expireDate').value = ' ';
@@ -72,7 +70,7 @@ function finishedAdd(data) {
 }
 
 function finishedDel(data) {
-	console.log("Your new item is deleted");
+	console.log("Your item is deleted");
 	setTimeout(function(){ window.location.reload(true); }, 1000);
 }
 

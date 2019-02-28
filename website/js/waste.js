@@ -78,13 +78,13 @@ function showDetail() {
                         break;
             }        
           }
-          output = '<p></p><center>Waste of Grains: $'+sumGrains.toFixed(2)+'</center>';
-          output += '<center>Waste of Fruits: $'+sumFruits.toFixed(2)+'</center>';
-          output += '<center>Waste of Vegetables: $'+sumVegetables.toFixed(2)+'</center>';
-          output += '<center>Waste of Dairy: $'+sumDairy.toFixed(2)+'</center>';
-          output += '<center>Waste of Protein: $'+sumProtein.toFixed(2)+'</center>';
-          output += '<center>Waste of Oils: $'+sumOils.toFixed(2)+'</center>';
-          output += '<center>Waste of Other: $'+sumOther.toFixed(2)+'</center><p></p>';
+          output = '<p></p><h4>Waste of Grains: $'+sumGrains.toFixed(2)+'';
+          output += '</h4><h4>Waste of Fruits: $'+sumFruits.toFixed(2)+'';
+          output += '</h4><h4>Waste of Vegetables: $'+sumVegetables.toFixed(2)+'';
+          output += '</h4><h4>Waste of Dairy: $'+sumDairy.toFixed(2)+'';
+          output += '</h4><h4>Waste of Protein: $'+sumProtein.toFixed(2)+'';
+          output += '</h4><h4>Waste of Oils: $'+sumOils.toFixed(2)+'';
+          output += '</h4><h4>Waste of Other: $'+sumOther.toFixed(2)+'<p></p>';
           document.getElementById('details').innerHTML = output;
           console.log('Have shown detail');
         }
@@ -95,8 +95,4 @@ function showDetail() {
   } else {
 		$('#details').fadeToggle();
 	}
-}
-
-function dateFilter() {
-  
 }

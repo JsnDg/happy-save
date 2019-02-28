@@ -160,6 +160,11 @@
       "name": "233",
       "price": 0,
       "timeStamp": "2019-2-27"
+    },
+    {
+      "name": "Sprite",
+      "price": 1.5,
+      "timeStamp": "2019-2-27"
     }
   ],
   "waste": [
@@ -202,6 +207,17 @@
       "unit": "lb",
       "type": "Grains",
       "wastePer": "10"
+    }
+  ],
+  "shop_list": [
+    {
+      "name": "Milk"
+    },
+    {
+      "name": "Water"
+    },
+    {
+      "name": "Ham"
     }
   ]
 }

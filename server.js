@@ -258,7 +258,6 @@ function addWasteItem(request, response){
 app.get('/changeBudget/:fromDate/:toDate/:budgetAmount', changeBudget);
 
 function changeBudget(request, response){
-    console.log('OK');
     var data = request.params;
     var fromDate = data.fromDate;
     var toDate = data.toDate;
@@ -287,6 +286,65 @@ function changeBudget(request, response){
             console.log('Done');
         };
         reply = {msg: "Your new budget is recorded."};
+        response.send(reply)
+    })
+    }
+}
+
+app.get('/delShopList/:delName', delShopList);
+
+function delShopList(request, response){
+    
+    var data = request.params;
+    var delName= data.delName;
+    fs.readFile('website/js/data.json',function(err, data){
+        if(err){
+            return console.error(err);
+        }
+        var allItem = data.toString();
+        allItem = JSON.parse(allItem);
+        for (var i=0;i<allItem.shop_list.length;i++){
+            if (allItem.shop_list[i].name === delName){
+                allItem.shop_list.splice(i,1);
+            }
+        }
+        var newData = JSON.stringify(allItem, null, 2);
+        fs.writeFile('website/js/data.json', newData, finished);
+        function finished(err){
+            console.log('Is updated.');
+        };
+        reply = {msg: "Your shop list is updated."};
+        response.send(reply);
+    })
+}
+
+app.get('/add2ShopList/:name', add2ShopList);
+
+function add2ShopList(request, response){
+    var data = request.params;
+    var name = data.name;
+    var reply; 
+    if(!name){
+        reply = {msg: "The name is required."};
+        response.send(reply)
+    } else 
+    {
+    var newItem = {
+        "name": name,
+    }
+    fs.readFile('website/js/data.json',function(err, data){
+        if(err){
+            return console.error(err);
+        }
+        var allItem = data.toString();
+        allItem = JSON.parse(allItem);
+        allItem.shop_list.push(newItem);
+        var newData = JSON.stringify(allItem, null, 2);
+        fs.writeFile('website/js/data.json', newData, finished);
+        function finished(err){
+            console.log('Done');
+        };
+        reply = {msg: "Your new item is recorded."};
         response.send(reply)
     })
     }

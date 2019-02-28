@@ -2,7 +2,10 @@
 <head>
     <title>happy save</title>
     <script src="js/jquery.js"></script>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://twitter.github.io/typeahead.js/js/handlebars.js"></script>
+    <script src="/js/shoplist.js"></script>
+
+	  <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
@@ -11,13 +14,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <!--
-    <div class="logo">
-    <h1><center>happy save</center></h1>
-    </div>
-    </head>
-    -->
     
     <body>
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -49,14 +45,23 @@
 	</nav>
         
         <body>
-            <center><h1>Sales Info</h1></center>
-            <center><img src="img/GoogleMaps.jpg" style="width: 75%; margin-bottom: 0.5em;margin-top:1em;"></center>
-            <center><h2><u>Current Sales Near You</u></h2></center>
-            <center><h4>Vons</h4></center>
-            <center><h4>Ralphs</h4></center>
-            <center><h4>Hmart</h4></center>
-            <center><h4>Ranch 99</h4></center>
-            
+            <center><h1>Shopping List</h1></center>
+            <div class="shop_list">
+              <ul>
+                  {{#this}}
+                  <center><h3>{{name}} <button class="item4shop" value={{name}} style="background-color:#7EDAD4;border-radius:8px;color:white;">Delete</button></h3></center>
+                  {{/this}}
+              </ul>
+            </div>
+            <center>
+              <h4 class="addShopList">
+                  Add new item to shop list:
+              </h4><p>
+                  Name: <button style="border-color:#7EDAD4;background-color:#FFFFFF;"><input id="name" placeholder="e.g. Chicken"></button>
+              </p><p>
+                  <center><button class="newSubmit" style="background-color:#7EDAD4;border-radius:8px;color:white;">Add</button></center>
+              </p>
+              </center>
         </body>
         
         <script src="js/bootstrap.min.js"></script>
