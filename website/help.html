@@ -1,5 +1,6 @@
 <html lang="en">
-<head>
+
+    <head>
     <title>happy save</title>
 	<script src="js/jquery.js"></script>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -46,7 +47,41 @@
         
         <body>
             <center><h1>Help</h1></center>
-            <center><p> Welcome to happy save help center.</p></center>
+            <center><p> FAQ</p></center>
+            
+            <button class="accordion">Who are we?</button>
+                <div class="panel">
+                    <p> We are a small group of students that aspire to help your average college student help manage their finances whilst also reducing the amount of food they might waste as a result of poor 
+                     spending habits.</p>
+                </div>
+            
+            <button class="accordion">What is happy save?</button>
+                <div class="panel">
+                    <p>happy save is a budget/food oriented app that is developed to promote better money management whilst also promoting a decrease in food waste. </p>
+                </div> 
+            
+        <button class="accordion">I found a problem where do I report it?</button>
+                <div class="panel">
+                    <p>If your find that there are ever any issues send them to:
+                    [insert email here]</p>
+                </div> 
+            
+            <script>
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+
+                for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight){
+                panel.style.maxHeight = null;
+                } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+            });
+        }
+            </script>
             
         </body>
         
