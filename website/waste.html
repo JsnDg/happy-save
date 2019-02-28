@@ -78,9 +78,9 @@
                     for(var i=0;i<item.length;i++){
                         moneyWaste = item[i].price*item[i].wastePer/100;
                         output += '<li>'+item[i].name
-                        +' - Waste:'+" "+item[i].wastePer+'% - Money waste: $'+moneyWaste+'</li><p><button style="border-color:#7EDAD4;background-color:#FFFFFF;border-radius:8px" value="'+i
+                        +' - Waste:'+" "+item[i].wastePer+'% - Money waste: $'+moneyWaste+'</li><p>Expired date: '+item[i].expireDate+'</p><button style="border-color:#7EDAD4;background-color:#FFFFFF;border-radius:8px" value="'+i
                         +'" class="del_waste">Delete</button>'+" "+'<button style="border-color:#7EDAD4;background-color:#FFFFFF;border-radius:8px" value="'+i
-                        +'" class="waste_portion">Change portion</button></p><p class="0" id="recentItem'+i+'"></p>';
+                        +'" class="waste_portion">Change portion</button><p class="0" id="recentItem'+i+'"></p>';
                     }
                     
                     document.getElementById('waste').innerHTML = output;
