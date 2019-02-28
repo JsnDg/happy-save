@@ -28,7 +28,7 @@ function putNewItem(){
         window.alert("Please input a number as price.");
     } else {
 		$.get('add_receipt/'+name+'/'+price+'/'+timeStamp, finishedAdd);
-		$(this).text("Gotcha! Add one more");
+		window.alert("Gotcha! You can check it in Receipt.");
 	}
 	document.getElementById('name').value = '';
     document.getElementById('price').value = '';

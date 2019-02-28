@@ -39,7 +39,7 @@ function putNewItem(){
 			window.alert("Please input a expire date not before today.");
         } else {
             $.get('add/'+name+'/'+price+'/'+timeStamp+'/'+expireDate+'/'+weight+'/'+unit+'/'+type, finishedAdd);
-	        $(this).text("Gotcha! Add one more"); 
+			window.alert("Gotcha! You can check it in Food.");
         }
     }
 	document.getElementById('name').value = '';

@@ -14,11 +14,13 @@ $(document).ready(function() {
                       var context = $.grep(response.item_receipt, function (n, i){
                         return (Number(n.timeStamp.slice(0, 4)+n.timeStamp.slice(5, 7)+n.timeStamp.slice(8, 10))>=Number(fromDate.slice(0, 4)+fromDate.slice(5, 7)+fromDate.slice(8, 10)))
                                     && (Number(n.timeStamp.slice(0, 4)+n.timeStamp.slice(5, 7)+n.timeStamp.slice(8, 10))<=Number(toDate.slice(0, 4)+toDate.slice(5, 7)+toDate.slice(8, 10)))});
-                      console.log(context);
                       var html = template(context);
                       $(".item_rec").html(html);
+                      var output = '';
+                      output += '<center><h3>From '+fromDate+' to '+toDate+'</h3></center>';
                       console.log('Setup done');
                     }
+                    document.getElementById('date4Receipt').innerHTML = output;
                 };
                 xhttp.open("GET", "/js/data.json", true);
                 xhttp.send();

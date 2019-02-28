@@ -23,6 +23,7 @@ function reviseBudget(){
         window.alert("Please input a valid period.");
     } else {
         $.get('changeBudget/'+fromDate+'/'+toDate+'/'+budget, finishedAdd);
+        window.alert("Your budget is reset! Happy save!");
     }
 		
 	}

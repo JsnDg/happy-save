@@ -37,7 +37,7 @@ function putNewItem(){
         || (today.getFullYear()==Number(expireDate.slice(0, 4)) && (today.getMonth()+1)==Number(expireDate.slice(5, 7)) && today.getDate()>Number(expireDate.slice(8, 10))))
         {
             $.get('addwaste/'+name+'/'+price+'/'+timeStamp+'/'+expireDate+'/'+weight+'/'+unit+'/'+type+'/'+wastePer, finishedAdd);
-            $(this).text("Gotcha! Add one more"); 
+			window.alert("Recorded! Please reduce your waste!");
         } else {
             window.alert("Please input a expired date no later than today.");
         }
