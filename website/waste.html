@@ -68,13 +68,6 @@
                     var item = response.waste;
                     var output = '';
                     var wasteSum = 0;
-                    var sumGrains = 0;
-                    var sumFruits = 0;
-                    var sumVegetables = 0;
-                    var sumDairy = 0;
-                    var sumProtein = 0;
-                    var sumOils = 0;
-                    var sumOther = 0;
                     for(var i=0;i<item.length;i++){
                         moneyWaste = item[i].price*item[i].wastePer/100;
                         wasteSum += moneyWaste;
