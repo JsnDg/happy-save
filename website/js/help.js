@@ -1,15 +1,9 @@
-//Navbar Toggle
+$(document).ready(function() {
+	setup();
+})
 
-
-$('.navbar-toggle').click(function(){
-  if( $(this).hasClass('collapsed') ){
-    $(this).removeClass('collapsed');
-  }else{
-    $(this).addClass('collapsed');
-  }
- })
- 
- var acc = help.getElementsByClassName("accordion");
+function accordianSlide(){
+var acc = document.getElementsByClassName("accordion");
 var i;
 
 for (i = 0; i < acc.length; i++) {
@@ -22,4 +16,5 @@ for (i = 0; i < acc.length; i++) {
       panel.style.maxHeight = panel.scrollHeight + "px";
     } 
   });
+}
 }
