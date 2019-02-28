@@ -11,8 +11,18 @@ function putNewItem(){
     var name = document.getElementById('name').value;
     var rawPrice = document.getElementById('price').value;
 	var price = Number(rawPrice);
-	var today = new Date();
-	var timeStamp = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var today = new Date();
+    if (String(today.getMonth()+1).length==2){
+		var month = String(today.getMonth()+1);
+	 } else {
+		var month = "0"+String(today.getMonth()+1);
+	 }
+	 if (String(today.getDate()).length==2){
+		 var date = String(today.getDate());
+	  } else {
+		 var date = "0"+String(today.getDate());
+	  }
+	var timeStamp = today.getFullYear()+'-'+month+'-'+date;
 	var expireDate = document.getElementById('expireDate').value;
 	var weight = Number(document.getElementById('weight').value);
 	var unit = document.getElementById('unit').value;
@@ -32,10 +42,10 @@ function putNewItem(){
             window.alert("Please input a expired date no later than today.");
         }
     }
-	document.getElementById('name').value = ' ';
-	document.getElementById('price').value = ' ';
-	document.getElementById('expireDate').value = ' ';
-	document.getElementById('weight').value = ' ';
+	document.getElementById('name').value = '';
+	document.getElementById('price').value = '';
+	document.getElementById('expireDate').value = '';
+	document.getElementById('weight').value = '';
 }
 
 function finishedAdd(data) {

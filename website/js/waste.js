@@ -18,7 +18,7 @@ function finishedDel(data) {
 function changeWastePortion() {
   var selID = $(this)[0].value;
 	if (document.getElementById("recentItem"+selID).className == 0){
-    $("#recentItem"+selID).append("Set waste percentage:<select style='border-color:#7EDAD4;background-color:#FFFFFF;border-radius:8px;' id='waste_percent"+selID+"'><option>10</option><option>25</option><option>50</option><option>75</option><option>90</option><option>100</option></select>%<button class='confirmChange' value='"+selID+"'>Confirm</button>");
+    $("#recentItem"+selID).append("Set waste percentage:<select style='border-color:#7EDAD4;background-color:#FFFFFF;border-radius:8px;' id='waste_percent"+selID+"'><option>10</option><option>25</option><option>50</option><option>75</option><option>90</option><option>100</option></select>%<button style='background-color:#7EDAD4;border-radius:8px;color:white;' class='confirmChange' value='"+selID+"'>Confirm</button>");
     console.log('Append options of change the portion');
     document.getElementById("recentItem"+selID).className = 1;
     $(".confirmChange").click(changePortion);
