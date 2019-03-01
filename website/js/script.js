@@ -8,4 +8,3 @@ $('.navbar-toggle').click(function(){
     $(this).addClass('collapsed');
   }
  })
- 

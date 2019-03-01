@@ -75,6 +75,14 @@ function addNewItem(request, response){
     }
 }
 
+app.get('/page_A', function(request, response){
+    response.sendfile('website/home.html');
+});
+
+app.get('/page_B', function(request, response){
+    response.sendfile('website/home_test.html');
+});
+
 app.get('/add_receipt/:name/:price/:timeStamp', addNewItem2Receipt);
 
 function addNewItem2Receipt(request, response){
