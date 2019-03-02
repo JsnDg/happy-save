@@ -42,7 +42,7 @@ function putNewItem(){
             window.alert("Please input a expired date no later than today.");
         }
 	}
-	window.open('waste.html', '_self');
+	window.open('waste_test.html', '_self');
 	/*
 	document.getElementById('name').value = '';
 	document.getElementById('price').value = '';

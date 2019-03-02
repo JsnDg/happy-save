@@ -30,7 +30,7 @@ function putNewItem(){
 		$.get('add_receipt/'+name+'/'+price+'/'+timeStamp, finishedAdd);
 		window.alert("Gotcha! You can check it in Receipt.");
 	}
-	window.open('receipt.html', '_self');
+	window.open('receipt_test.html', '_self');
 	/*
 	document.getElementById('name').value = '';
 	document.getElementById('price').value = '';

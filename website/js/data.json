@@ -69,6 +69,15 @@
       "weight": 400,
       "unit": "ml",
       "type": "Other"
+    },
+    {
+      "name": "Ham",
+      "price": 2.5,
+      "timeStamp": "2019-03-02",
+      "expireDate": "2019-03-29",
+      "weight": 4,
+      "unit": "lb",
+      "type": "Protein"
     }
   ],
   "item_receipt": [
@@ -174,6 +183,16 @@
       "name": "Cola",
       "price": 4.5,
       "timeStamp": "2019-02-27"
+    },
+    {
+      "name": "Ham",
+      "price": 2.5,
+      "timeStamp": "2019-03-02"
+    },
+    {
+      "name": "Burger",
+      "price": 2.55,
+      "timeStamp": "2019-03-02"
     }
   ],
   "waste": [

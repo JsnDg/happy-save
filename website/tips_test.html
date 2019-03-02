@@ -1,0 +1,186 @@
+<html lang="en">
+<head>
+    <title>happy save</title>
+    <script src="js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+	  <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+     
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!--
+    <div class="logo">
+    <h1><center>happy save</center></h1>
+    </div>
+    </head>
+    -->
+    
+    <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<div class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu">	
+					<span class="bar1"></span>
+					<span class="bar2"></span>
+					<span class="bar3"></span>
+			  </div>
+				<a class="navbar-brand top" href="#">
+					<!--<img src="img/logo.png" alt="">-->
+				</a>
+<ul class="back-button">
+        <ul class="nav navbar-nav navbar-left">
+                <a href="wallet_test.html"><img src="img/back.png" style="width:6%"></a>
+               </ul>
+                </ul>
+			</div>
+
+			<div class="collapse navbar-collapse" id="main-menu">
+
+			   <ul class="nav navbar-nav navbar-right">
+				<li><a href="home_test.html">Home</a></li>
+				<li><a href="help_test.html">Help</a></li>
+				<li><a href="setting_test.html">Settings</a></li>
+			  </ul>
+			</div>
+		</div>
+	</nav>
+        
+        <body>
+            <center><h1>Tips</h1></center>
+            <p id="TipsSum"></p>
+            <center><canvas id="circle" width="400" height="300">No Canvas</canvas></center>
+            <script>
+              var xhttptips = new XMLHttpRequest();
+              xhttptips.onreadystatechange = function() {
+                  if (this.readyState == 4 && this.status == 200) {
+                  console.log('Loading json from the server');
+                  var response = JSON.parse(xhttptips.responseText);
+                  var budget = response.budget;
+                  var receipt = response.item_receipt;
+                  var item = response.waste;
+                  var output = '';
+                  var spendSum = 0;
+                  var fromDate = budget[0].fromDate;
+                  var toDate = budget[0].toDate;
+                  var wasteFilter = $.grep(item, function (n, i){
+                        return (Number(n.timeStamp.slice(0, 4)+n.timeStamp.slice(5, 7)+n.timeStamp.slice(8, 10))>=Number(fromDate.slice(0, 4)+fromDate.slice(5, 7)+fromDate.slice(8, 10)))
+                                    && (Number(n.timeStamp.slice(0, 4)+n.timeStamp.slice(5, 7)+n.timeStamp.slice(8, 10))<=Number(toDate.slice(0, 4)+toDate.slice(5, 7)+toDate.slice(8, 10)))});
+                  for(var i=0;i<wasteFilter.length;i++){
+                      cost = wasteFilter[i].price*wasteFilter[i].wastePer/100;
+                      spendSum += cost;
+                  }
+                  var sumGrains = 0;
+                  var sumFruits = 0;
+                  var sumVegetables = 0;
+                  var sumDairy = 0;
+                  var sumProtein = 0;
+                  var sumOils = 0;
+                  var sumOther = 0;
+                  for(var i=0;i<wasteFilter.length;i++){
+                      moneyWaste = wasteFilter[i].price*wasteFilter[i].wastePer/100;
+                      switch (item[i].type) {
+                          case "Grains":
+                                sumGrains += moneyWaste;
+                                break;
+                          case "Fruits":
+                                sumFruits += moneyWaste;
+                                break;
+                          case "Vegetables":
+                                sumVegetables += moneyWaste;
+                                break;
+                          case "Dairy":
+                                sumDairy += moneyWaste;
+                                break;
+                          case "Protein":
+                                sumProtein += moneyWaste;
+                                break;
+                          case "Oils":
+                                sumOils += moneyWaste;
+                                break;
+                          case "Other":
+                                sumOther += moneyWaste;
+                                break;
+                      }        
+                  }
+                  var maxSpent = Math.max(sumGrains, sumFruits, sumVegetables, sumDairy, sumProtein, sumOils, sumOther);
+                  console.log(maxSpent);
+                  var maxSpentItem = '';
+                  switch (maxSpent) {
+                          case sumGrains:
+                                maxSpentItem = 'grains';
+                                break;
+                          case sumFruits:
+                                maxSpentItem = 'fruits';
+                                break;
+                          case sumVegetables:
+                                maxSpentItem = 'vegetables';
+                                break;
+                          case sumDairy:
+                                maxSpentItem = 'dairy';
+                                break;
+                          case sumProtein:
+                                maxSpentItem = 'food with protein';
+                                break;
+                          case sumOils:
+                                maxSpentItem = 'oils';
+                                break;
+                          case sumOther:
+                                maxSpentItem = 'food';
+                                break;
+                      }
+                  console.log(maxSpentItem);
+                  output += '<center><h3>From '+fromDate+' to '+toDate+'</h3></center>';
+                  output += '<center><h3>Total you waste: $'+spendSum.toFixed(2)+'</h3></center>';
+                  output += '<center><h3>Please make a plan to buy '+maxSpentItem+'!<h3></center>';
+                  output += '<center><h3>Types of waste ($)</h3></center>';
+                  }
+                  document.getElementById('TipsSum').innerHTML = output;
+                  var ctx = document.getElementById("circle").getContext("2d");
+                  var myChart = new Chart(ctx, {
+                  type: 'pie',
+                  data: {
+                      labels: ["Grains", "Fruits", "Vegetables", "Dairy", "Protein", "Oils", "Others"],
+                      datasets: [{
+                          data: [sumGrains, sumFruits, sumVegetables, sumDairy, sumProtein, sumOils, sumOther],
+                          backgroundColor: [
+                          'rgba(255, 99, 132, 0.2)',
+                          'rgba(54, 162, 235, 0.2)',
+                          'rgba(255, 206, 86, 0.2)',
+                          'rgba(75, 192, 192, 0.2)',
+                          'rgba(153, 102, 255, 0.2)',
+                          'rgba(255, 159, 64, 0.2)',
+                          'rgba(105, 159, 64, 0.2)'
+                          ],
+                      }]
+                  },
+                  options: {
+                      responsive: true
+                  }
+                  });
+              };
+              xhttptips.open("GET", "/js/data.json", true);
+              xhttptips.send();
+            </script> 
+            <!--
+            <ul>
+            <li>Write a list before you go shopping – and stick to it</li>
+            <li>Try to not eat out as often and cook at home</li>   
+            <li>Remember to only buy things out of necessity</li>
+            </ul>
+            <h2>More to come...</h2>
+            <center><img src="img/How-To-Save-Money-Fast.jpg" style="width: 75%; margin-bottom: 0.5em;margin-top:1em;" onclick='window.open("home.html","_self")'></center>
+            -->
+        </body>
+        
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/modernizr.js"></script>
+
+    </body>
+</html>

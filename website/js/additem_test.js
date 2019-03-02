@@ -42,7 +42,7 @@ function putNewItem(){
 			window.alert("Gotcha! You can check it in Food.");
         }
 	}
-	window.open('food.html', '_self');
+	window.open('food_test.html', '_self');
 	/*
 	document.getElementById('name').value = '';
 	document.getElementById('price').value = '';

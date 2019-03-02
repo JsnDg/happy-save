@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <title>happy save</title>
+
+    <!-- JS -->
+    <script src="/js/require.js"></script>
+    <script src="/js/jquery.js"></script>
+    <!-- jquery must be put at first -->
+
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/modernizr.js"></script>
+    
+    <script src="https://twitter.github.io/typeahead.js/js/handlebars.js"></script>
+    <script src="/js/receipt_handlebar.js"></script>
+    
+    <!-- CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<div class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu">	
+					<span class="bar1"></span>
+					<span class="bar2"></span>
+					<span class="bar3"></span>
+			  </div>
+				<a class="navbar-brand top" href="#">
+				</a>
+         <ul class="back-button">
+          <ul class="nav navbar-nav navbar-left">
+                  <a href="wallet_test.html"><img src="img/back.png" style="width:6%"></a>
+                 </ul>
+                  </ul>
+			</div>
+
+			<div class="collapse navbar-collapse" id="main-menu">
+			   <ul class="nav navbar-nav navbar-right">
+				<li><a href="home_test.html">Home</a></li>
+				<li><a href="help_test.html">Help</a></li>
+				<li><a href="setting_test.html">Settings</a></li>
+			  </ul>
+			</div>
+		</div>
+	</nav>
+        
+        <body>
+                <center><h1>Receipt</h1></center>
+                <center><h3 id="date4Receipt"></h3></center>
+                <div class="item_rec">
+                    <ul>
+                        {{#this}}
+                        <li>{{timeStamp}}</li>
+                        <p>{{name}} - ${{price}}</p>
+                        {{/this}}
+                    </ul>
+                </div>
+                <center><button style="background-color:#7EDAD4;border-radius:8px;color:white;" onclick="window.open('receipt_additem_test.html', '_self')">Add item to receipt</button></center>
+                <p></p>
+        </body>
+    </body>
+</html>
