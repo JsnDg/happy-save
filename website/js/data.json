@@ -53,15 +53,6 @@
       "type": "Vegetables"
     },
     {
-      "name": "Water",
-      "price": 1.98,
-      "timeStamp": "2019-02-21",
-      "expireDate": "2019-03-03",
-      "weight": 3,
-      "unit": "gal",
-      "type": "Other"
-    },
-    {
       "name": "Cola",
       "price": 4.5,
       "timeStamp": "2019-02-27",
@@ -255,6 +246,16 @@
       "unit": "lb",
       "type": "Fruits",
       "wastePer": "90"
+    },
+    {
+      "name": "Water",
+      "price": 1.98,
+      "timeStamp": "2019-02-21",
+      "expireDate": "2019-03-03",
+      "weight": 3,
+      "unit": "gal",
+      "type": "Other",
+      "wastePer": 100
     }
   ],
   "shop_list": [
