@@ -24,6 +24,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 //ga('create', 'UA-134917491-1', 'auto');
 ga('create', 'UA-135688989-1', 'auto');
 ga('send', 'pageview');
+
 </script>
     </head>
     
@@ -54,7 +55,7 @@ ga('send', 'pageview');
         
         <body>
             <center><img src="img/logo.png" style="width: 75%;"></center>
-            <center><img src="img/wallet.png" style="width: 75%;" onclick='window.open("wallet_test.html","_self");' onclick='ga("send","event","Img","click");'><p>Check your expense and get saving tips</p></center>
+            <center><img src="img/wallet.png" class="walletButton" style="width: 75%;"><p>Check your expense and get saving tips</p></center>
             <center><img src="img/kitchen.png" style="width: 75%;" onclick='window.open("kitchen_test.html","_self");' onclick='ga("send","event","Img","click","Kitchen");'><p>Check your food and waste lists</p></center>
             <center><img src="img/sl.png" style="width: 75%;" onclick='window.open("shoplist.html","_self");'><p>Make a plan when you go shopping</p></center>
             <center><img src="img/happysavesmile.png" style="width: 30%; margin-bottom: 0.5em;" onclick='window.open("food_test.html","_self")'></center>
@@ -64,5 +65,22 @@ ga('send', 'pageview');
         <script src="js/script.js"></script>
 	      <script src="js/bootstrap.js"></script>
         <script src="js/modernizr.js"></script>
+        <script>
+            $(document).ready(function() {
+              initializePage();
+            });
+            /*
+            * Function that is called when the document is ready.
+            */
+            function initializePage() {
+              $(".walletButton").click(clickWallet);
+            }
+  
+            function clickWallet() {
+              console.log("Clicked");
+              ga("send","event","Img","click");
+              window.open("wallet_test.html","_self");
+            }
+          </script>
     </body>
 </html>
