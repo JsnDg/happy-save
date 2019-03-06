@@ -75,12 +75,19 @@ ga('send', 'pageview');
             function initializePage() {
               $(".walletButton").click(clickWallet);
             }
-  
             function clickWallet() {
               console.log("Clicked");
               ga("send","event","Img","click","Wallet");
               window.open("wallet_test.html","_self");
             }
+        </script>
+        <script>
+            $(document).ready(function() {
+              initializePage();
+            });
+            /*
+            * Function that is called when the document is ready.
+            */
             function initializePage() {
               $(".kitchenButton").click(clickKitchen);
             }
@@ -89,6 +96,14 @@ ga('send', 'pageview');
               ga("send","event","Img","click","Kitchen");
               window.open("kitchen_test.html","_self");
             }
+        </script>
+        <script>
+            $(document).ready(function() {
+              initializePage();
+            });
+            /*
+            * Function that is called when the document is ready.
+            */
             function initializePage() {
               $(".shoppingButton").click(clickShopping);
             }
