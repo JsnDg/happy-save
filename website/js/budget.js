@@ -9,6 +9,7 @@ function setup(){
 }
 
 function reviseBudget(){
+    ga("send","event","Budget","revise");
     var rawBudget = document.getElementById('budget').value;
     var fromDate = document.getElementById('fromDate').value;
     var toDate = document.getElementById('toDate').value;
@@ -18,6 +19,12 @@ function reviseBudget(){
 	console.log('Set budget');
 	if (isNaN(rawBudget)){
         window.alert("Please input a number as budget.");
+    } else {
+    if (isNaN(fromDateNum)){
+        window.alert("Please input a start date.");
+    } else {
+    if (isNaN(toDateNum)){
+        window.alert("Please input an end date.");
     } else {
     if (fromDateNum>toDateNum){
         window.alert("Please input a valid period.");
@@ -37,10 +44,12 @@ function finishedAdd(data) {
 }
 
 function checkReceipt() {
+    ga("send","event","ReceiptInBudget","check");
     window.open('receipt.html', '_self');
 }
 
 function checkTips() {
+    ga("send","event","TipsInBudget","check");
     window.open('tips.html', '_self');
 }
 
