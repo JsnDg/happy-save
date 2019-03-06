@@ -9,6 +9,7 @@ function setup(){
 }
 
 function putNewItem(){
+	ga("send","event","FoodItem","add");
 	var name = document.getElementById('name').value;
 	var rawPrice = document.getElementById('price').value;
 	var price = Number(rawPrice);
@@ -52,6 +53,7 @@ function putNewItem(){
 }
 
 function itemDetail(){
+	ga("send","event","FoodItem","detail");
 	var selID = $(this)[0].value;
 	if (document.getElementById("recentItem"+selID).className == 0){
 		var xhttpitem = new XMLHttpRequest();
@@ -75,6 +77,7 @@ function itemDetail(){
 function delItem(){
 	var delID = $(this)[0].value;
 	console.log(delID);
+	ga("send","event","FoodItem","delete");
 	$.get('del/'+delID, finishedDel);
 }
 
