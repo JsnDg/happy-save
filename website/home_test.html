@@ -55,8 +55,8 @@ ga('send', 'pageview');
         
         <body>
             <center><img src="img/logo.png" style="width: 75%;"></center>
-            <center><img src="img/wallet.png" class="walletButton" style="width: 75%;" onclick='window.open("wallet_test.html","_self")'><p>Check your expense and get saving tips</p></center>
-            <center><img src="img/kitchen.png" class="kitchenButton" style="width: 75%;" onclick='window.open("kitchen_test.html","_self")'><p>Check your food and waste lists</p></center>
+            <center><img src="img/wallet.png" class="walletButton" style="width: 75%;"><p>Check your expense and get saving tips</p></center>
+            <center><img src="img/kitchen.png" class="kitchenButton" style="width: 75%;"><p>Check your food and waste lists</p></center>
             <center><img src="img/sl.png" class="shoppingButton" style="width: 75%;"><p>Make a plan when you go shopping</p></center>
             <center><img src="img/happysavesmile.png" style="width: 30%; margin-bottom: 0.5em;" onclick='window.open("food_test.html","_self")'></center>
         </body>
@@ -74,42 +74,22 @@ ga('send', 'pageview');
             */
             function initializePage() {
               $(".walletButton").click(clickWallet);
+              $(".kitchenButton").click(clickKitchen);
+              $(".shoppingButton").click(clickShopping);
             }
             function clickWallet() {
               console.log("Clicked");
-              ga("send","event","Img","click","Wallet");
+              ga("send","event","Wallet","click");
               window.open("wallet_test.html","_self");
-            }
-        </script>
-        <script>
-            $(document).ready(function() {
-              initializePage();
-            });
-            /*
-            * Function that is called when the document is ready.
-            */
-            function initializePage() {
-              $(".kitchenButton").click(clickKitchen);
             }
             function clickKitchen() {
               console.log("Clicked");
-              ga("send","event","Img","click","Kitchen");
+              ga("send","event","Kitchen","click");
               window.open("kitchen_test.html","_self");
-            }
-        </script>
-        <script>
-            $(document).ready(function() {
-              initializePage();
-            });
-            /*
-            * Function that is called when the document is ready.
-            */
-            function initializePage() {
-              $(".shoppingButton").click(clickShopping);
             }
             function clickShopping() {
               console.log("Clicked");
-              ga("send","event","Img","click","Shopping");
+              ga("send","event","Shopping","click");
               window.open("shoplist.html","_self");
             }
           </script>
