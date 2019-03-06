@@ -8,6 +8,7 @@ function setup(){
 }
 
 function putNewItem(){
+	ga("send","event","Receipt","add");
 	var name = document.getElementById('name').value;
 	var rawPrice = document.getElementById('price').value;
 	var price = Number(rawPrice);

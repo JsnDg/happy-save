@@ -22,7 +22,7 @@ $(document).ready(function() {
 })
 
 function deleteShopList() {
-    ga("send","event","Shoplist","delete");
+    ga("send","event","Shoplist_test","delete");
     console.log("Start to delete");
     var delName = $(this)[0].value;
     console.log(delName);
@@ -35,7 +35,7 @@ function finishedDel(data) {
 }
 
 function putNewItem(){
-    ga("send","event","Shoplist","add");
+    ga("send","event","Shoplist_test","add");
 	var name = document.getElementById('name').value;
 	console.log('Adding');
 	if (!name){
