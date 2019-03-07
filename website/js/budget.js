@@ -9,7 +9,7 @@ function setup(){
 }
 
 function reviseBudget(){
-    //ga("send","event","Budget","revise");
+    ga("send","event","Budget","revise");
     console.log("Start change")
     var rawBudget = document.getElementById('budget').value;
     var fromDate = document.getElementById('fromDate').value;
@@ -33,7 +33,7 @@ function reviseBudget(){
         $.get('changeBudget/'+fromDate+'/'+toDate+'/'+budget, finishedAdd);
         window.alert("Your budget is reset! Happy save!");
     }
-		
+    }}	
 	}
 	document.getElementById('budget').value = ' ';
     console.log('Finished');
@@ -45,12 +45,12 @@ function finishedAdd(data) {
 }
 
 function checkReceipt() {
-    //ga("send","event","ReceiptInBudget","check");
+    ga("send","event","ReceiptInBudget","check");
     window.open('receipt.html', '_self');
 }
 
 function checkTips() {
-    //ga("send","event","TipsInBudget","check");
+    ga("send","event","TipsInBudget","check");
     window.open('tips.html', '_self');
 }
 
