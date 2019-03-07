@@ -9,7 +9,7 @@ function setup(){
 }
 
 function reviseBudget(){
-    ga("send","event","Budget_test","revise");
+    //ga("send","event","Budget_test","revise");
     var rawBudget = document.getElementById('budget').value;
     var fromDate = document.getElementById('fromDate').value;
     var toDate = document.getElementById('toDate').value;
@@ -44,12 +44,12 @@ function finishedAdd(data) {
 }
 
 function checkReceipt() {
-    ga("send","event","ReceiptInBudget_test","check");
+    //ga("send","event","ReceiptInBudget_test","check");
     window.open('receipt_test.html', '_self');
 }
 
 function checkTips() {
-    ga("send","event","TipsInBudget_test","check");
+    //ga("send","event","TipsInBudget_test","check");
     window.open('tips_test.html', '_self');
 }
 
@@ -64,5 +64,5 @@ function drawCircle(data, color){
         ctx.arc(200,150,150,startPoint,startPoint+Math.PI*2*(data[i]/100),false);  
         ctx.fill();  
         startPoint+=Math.PI*2*(data[i]/100);  
-    }  
+    }
 }
