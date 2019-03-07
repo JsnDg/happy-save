@@ -17,25 +17,26 @@ function reviseBudget(){
     var budget = Number(rawBudget);
     var fromDateNum = Number(fromDate.slice(0, 4)+fromDate.slice(5, 7)+fromDate.slice(8, 10));
     var toDateNum = Number(toDate.slice(0, 4)+toDate.slice(5, 7)+toDate.slice(8, 10));
-	console.log('Set budget');
-	if (isNaN(rawBudget)){
+    console.log('Set budget');
+	if (rawBudget.length == 0){
         window.alert("Please input a number as budget.");
     } else {
-    if (isNaN(fromDateNum)){
-        window.alert("Please input a start date.");
-    } else {
-    if (isNaN(toDateNum)){
-        window.alert("Please input an end date.");
-    } else {
-    if (fromDateNum>toDateNum){
-        window.alert("Please input a valid period.");
-    } else {
-        $.get('changeBudget/'+fromDate+'/'+toDate+'/'+budget, finishedAdd);
-        window.alert("Your budget is reset! Happy save!");
-    }
-    }}	
+        if (fromDate.length==0){
+            window.alert("Please input a start date.");
+        } else {
+            if (toDate.length==0){
+                window.alert("Please input an end date.");
+            } else {
+                if (fromDateNum>toDateNum){
+                    window.alert("Please input a valid period.");
+                } else {
+                    $.get('changeBudget/'+fromDate+'/'+toDate+'/'+budget, finishedAdd);
+                    window.alert("Your budget is reset! Happy save!");
+                }
+            }
+        }
 	}
-	document.getElementById('budget').value = ' ';
+	document.getElementById('budget').value = '';
     console.log('Finished');
 }
 
