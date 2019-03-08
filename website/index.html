@@ -32,6 +32,8 @@ ga('send', 'pageview');
 
 </head>
         <body>
+                <div id="fb-root"></div>
+                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=2356878497867298&autoLogAppEvents=1"></script>
             <script>
                     window.fbAsyncInit = function() {
                     FB.init({
@@ -56,15 +58,17 @@ ga('send', 'pageview');
 
             <center><img src="img/logo.png" style="width: 75%; margin-bottom: 0.5em;"></center>
             <center><p class="facebookLogin">
-                <!---->
+                
             <fb:login-button 
             scope="public_profile,email" onlogin="checkLoginState();">
             </fb:login-button>
             </center>
             <center><a href='home_test.html'>Login</a></center>
-			</p>
-            <<br><center><img src="img/fbl.png" style="width: 50%; margin-bottom: 0.5em;" onclick="checkLoginState();"></center>
-    
+            </p>
+            <!--
+            <br><center><img src="img/fbl.png" style="width: 50%; margin-bottom: 0.5em;" onclick="checkLoginState();"></center>
+            -->
+            <div class="fb-login-button" data-size="medium" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
           <script src="js/bootstrap.min.js"></script>
           <script src="js/script.js"></script>
 	      <script src="js/bootstrap.js"></script>
